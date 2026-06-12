@@ -1,27 +1,23 @@
 extends CharacterBody3D
 
-const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+@export var max_forward_speed := 20.0
+@export var acceleration := 5.0
+@export var deceleration := 3.0
 
+var current_speed := 0.0
 
-func _physics_process(delta: float) -> void:	
-	# Add the gravity.
-	#if not is_on_floor():
-		#velocity += get_gravity() * delta
+func _physics_process(delta):
+	var target_speed := 0.0
 
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+	if Input.is_action_pressed("Forward"):
+		target_speed = max_forward_speed
+	elif Input.is_action_pressed("Backwards"):
+		target_speed = -max_forward_speed * 0.5
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir := Input.get_vector("Left", "Right", "Forward", "Backwards")
-	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
-		velocity.x = move_toward(velocity.x, SPEED * direction.x, 0.05)
-		velocity.z = move_toward(velocity.z, SPEED * direction.z, 0.05)
-	else:
-		velocity.x = move_toward(velocity.x, 0, 0.05)
-		velocity.z = move_toward(velocity.z, 0, 0.05)
-		
+	var rate = acceleration if abs(target_speed) > abs(current_speed) else deceleration
+
+	current_speed = move_toward(current_speed, target_speed, rate * delta)
+
+	velocity = -transform.basis.z * current_speed
+
 	move_and_slide()
