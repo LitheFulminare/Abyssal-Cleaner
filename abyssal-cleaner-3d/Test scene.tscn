@@ -33,3 +33,8 @@ size = Vector3(1.2824173, 184.91476, 27.594177)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1984013795]
 transform = Transform3D(1, 0, 0, 0, -0.96057564, 0.27801886, 0, -0.27801886, -0.96057564, 0, 0.77537215, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1733991001]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, -10)
+light_color = Color(1, 0, 0, 1)
+omni_range = 23.0

@@ -10,7 +10,7 @@ script = ExtResource("1_3uq8f")
 orientationScreen = NodePath("Orientation Screen")
 
 [node name="Orientation Screen" parent="." unique_id=578651837 instance=ExtResource("3_qvldv")]
-transform = Transform3D(0.645, 0, 0, 0, 0.6449997, 0, 0, 0, 0.6449997, 5.8608055, -3.7503583, -8.047839)
+transform = Transform3D(0.04, 0, 0, 0, 0.039999984, 0, 0, 0, 0.039999984, 0.5380652, -0.32144433, -0.6253317)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=406979246]
 
