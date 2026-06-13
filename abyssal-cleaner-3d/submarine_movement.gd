@@ -6,10 +6,28 @@ extends CharacterBody3D
 @export var acceleration := 5.0
 @export var deceleration := 3.0
 
-var forward_speed := 0.0
-var strafe_speed := 0.0
+var mouse_direction: Vector2
+var center: Vector2
+var mouse_distance: float
+
+var forward_speed: float
+var strafe_speed: float
+
+func _ready() -> void:
+	#center = DisplayServer.screen_get_size() # gets actual screen resolution
+	center = get_viewport().get_visible_rect().size
+	center = Vector2(center.x/2, center.y/2)
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseMotion:
+		_get_mouse_relative_position()
+		mouse_distance = get_viewport().get_mouse_position().distance_to(center)
 
 func _physics_process(delta):
+	# Rotation
+	rotation.y -= mouse_direction.x * delta * mouse_distance / 500
+	rotation.x -= mouse_direction.y * delta * mouse_distance / 500
+	
 	# Forward/backward
 	var target_forward := 0.0
 
@@ -20,11 +38,7 @@ func _physics_process(delta):
 
 	var forward_rate = acceleration if abs(target_forward) > abs(forward_speed) else deceleration
 
-	forward_speed = move_toward(
-	forward_speed,
-	target_forward,
-	forward_rate * delta
-	)
+	forward_speed = move_toward(forward_speed,target_forward,forward_rate * delta)
 
 	# Left/right
 	var target_strafe := 0.0
@@ -42,3 +56,7 @@ func _physics_process(delta):
 	velocity = -transform.basis.z * forward_speed + transform.basis.x * strafe_speed
 
 	move_and_slide()
+
+func _get_mouse_relative_position() -> void:
+	mouse_direction = get_viewport().get_mouse_position() - center
+	mouse_direction = mouse_direction.normalized()

@@ -7,8 +7,6 @@
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 script = ExtResource("1_3uq8f")
 
-[node name="CameraController" type="Node" parent="." unique_id=446548585]
-
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=406979246]
 
 [node name="SubmarineHud" parent="CanvasLayer" unique_id=310598664 instance=ExtResource("2_k4f85")]
