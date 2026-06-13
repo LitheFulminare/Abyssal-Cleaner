@@ -20,8 +20,8 @@ var pitch := 0.0
 
 func _ready() -> void:
 	#center = DisplayServer.screen_get_size() # gets actual screen resolution
-	center = get_viewport().get_visible_rect().size
-	center = Vector2(center.x/2, center.y/2)
+	calculate_center()
+	get_tree().get_root().size_changed.connect(calculate_center)
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
@@ -29,17 +29,17 @@ func _input(event: InputEvent) -> void:
 		mouse_distance = get_viewport().get_mouse_position().distance_to(center)
 
 func _physics_process(delta):
-	var forward = -global_basis.y
+	var forward = -global_basis.z
 	orientationScreen.update_player_arrow(atan2(forward.x, forward.z))
 	
 	# Rotation
-	yaw -= mouse_direction.x * delta * mouse_distance / 500.0
-	pitch -= mouse_direction.y * delta * mouse_distance / 500.0
+	var yaw_amount = -mouse_direction.x * delta * mouse_distance / 500.0
+	var pitch_amount = -mouse_direction.y * delta * mouse_distance / 500.0
 
-	var yaw_quat = Quaternion(Vector3.UP, yaw)
-	var pitch_quat = Quaternion(Vector3.RIGHT, pitch)
+	var yaw_quat = Quaternion(global_basis.y, yaw_amount)
+	var pitch_quat = Quaternion(global_basis.x, pitch_amount)
 
-	quaternion = yaw_quat * pitch_quat
+	quaternion = yaw_quat * pitch_quat * quaternion
 	
 	# Causes gimbal lock
 	#rotation.y -= mouse_direction.x * delta * mouse_distance / 500
@@ -73,6 +73,10 @@ func _physics_process(delta):
 	velocity = -transform.basis.z * forward_speed + transform.basis.x * strafe_speed
 
 	move_and_slide()
+
+func calculate_center() -> void:
+	center = get_viewport().get_visible_rect().size
+	center = Vector2(center.x/2, center.y/2)
 
 func _get_mouse_relative_position() -> void:
 	mouse_direction = get_viewport().get_mouse_position() - center
