@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+@export var orientationScreen: OrientationScreen
+
 @export var max_forward_speed := 20.0
 @export var max_strafe_speed := 10.0
 
@@ -24,6 +26,8 @@ func _input(event: InputEvent) -> void:
 		mouse_distance = get_viewport().get_mouse_position().distance_to(center)
 
 func _physics_process(delta):
+	orientationScreen.update_player_arrow(rotation.y)
+	
 	# Rotation
 	rotation.y -= mouse_direction.x * delta * mouse_distance / 500
 	rotation.x -= mouse_direction.y * delta * mouse_distance / 500

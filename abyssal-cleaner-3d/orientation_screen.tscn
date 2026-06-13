@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://r375g63wj4kf"]
+
+[ext_resource type="Texture2D" uid="uid://kdj6ktmt2uwl" path="res://Assets/Screen 1 - Orientation.png" id="1_rc168"]
+[ext_resource type="Texture2D" uid="uid://bw0e22ruj5m68" path="res://Assets/Player Arrow.png" id="2_3khgn"]
+[ext_resource type="Script" uid="uid://dmmi81850gxsg" path="res://orientation_screen.gd" id="2_rc168"]
+
+[node name="Orientation Screen" type="Sprite3D" unique_id=578651837 node_paths=PackedStringArray("playerArrow")]
+texture = ExtResource("1_rc168")
+script = ExtResource("2_rc168")
+playerArrow = NodePath("Player Arrow")
+
+[node name="Player Arrow" type="Sprite3D" parent="." unique_id=828074123]
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0.462, 0.024477601)
+texture = ExtResource("2_3khgn")

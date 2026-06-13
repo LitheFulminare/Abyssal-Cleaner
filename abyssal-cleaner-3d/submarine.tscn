@@ -2,10 +2,15 @@
 
 [ext_resource type="Script" uid="uid://dyx14p5q8fc1a" path="res://submarine_movement.gd" id="1_3uq8f"]
 [ext_resource type="PackedScene" uid="uid://csh3st7qcjppx" path="res://Submarine_HUD.tscn" id="2_k4f85"]
+[ext_resource type="PackedScene" uid="uid://r375g63wj4kf" path="res://orientation_screen.tscn" id="3_qvldv"]
 
-[node name="Submarine" type="CharacterBody3D" unique_id=478321623]
+[node name="Submarine" type="CharacterBody3D" unique_id=478321623 node_paths=PackedStringArray("orientationScreen")]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 script = ExtResource("1_3uq8f")
+orientationScreen = NodePath("Orientation Screen")
+
+[node name="Orientation Screen" parent="." unique_id=578651837 instance=ExtResource("3_qvldv")]
+transform = Transform3D(0.645, 0, 0, 0, 0.6449997, 0, 0, 0, 0.6449997, 5.8608055, -3.7503583, -8.047839)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=406979246]
 
