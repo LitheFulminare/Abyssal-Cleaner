@@ -6,10 +6,6 @@
 
 [node name="Submarine" parent="." unique_id=478321623 instance=ExtResource("1_n4lvk")]
 transform = Transform3D(1, 0, 0, 0, 0.7967514, 0.60430706, 0, -0.60430706, 0.7967514, 0, 2.2909765, 0)
-max_forward_speed = null
-max_strafe_speed = null
-acceleration = null
-deceleration = null
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=958655420]
 transform = Transform3D(1, 0, 0, 0, 0.2675199, 0, 0, 0, 1, 0.040863037, -0.00043445826, -0.011779785)

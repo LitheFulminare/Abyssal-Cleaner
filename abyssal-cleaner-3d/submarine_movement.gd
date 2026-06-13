@@ -15,6 +15,9 @@ var mouse_distance: float
 var forward_speed: float
 var strafe_speed: float
 
+var yaw := 0.0
+var pitch := 0.0
+
 func _ready() -> void:
 	#center = DisplayServer.screen_get_size() # gets actual screen resolution
 	center = get_viewport().get_visible_rect().size
@@ -26,11 +29,21 @@ func _input(event: InputEvent) -> void:
 		mouse_distance = get_viewport().get_mouse_position().distance_to(center)
 
 func _physics_process(delta):
-	orientationScreen.update_player_arrow(rotation.y)
+	var forward = -global_basis.y
+	orientationScreen.update_player_arrow(atan2(forward.x, forward.z))
 	
 	# Rotation
-	rotation.y -= mouse_direction.x * delta * mouse_distance / 500
-	rotation.x -= mouse_direction.y * delta * mouse_distance / 500
+	yaw -= mouse_direction.x * delta * mouse_distance / 500.0
+	pitch -= mouse_direction.y * delta * mouse_distance / 500.0
+
+	var yaw_quat = Quaternion(Vector3.UP, yaw)
+	var pitch_quat = Quaternion(Vector3.RIGHT, pitch)
+
+	quaternion = yaw_quat * pitch_quat
+	
+	# Causes gimbal lock
+	#rotation.y -= mouse_direction.x * delta * mouse_distance / 500
+	#rotation.x -= mouse_direction.y * delta * mouse_distance / 500
 	
 	# Forward/backward
 	var target_forward := 0.0
