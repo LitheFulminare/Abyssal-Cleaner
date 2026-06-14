@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://r375g63wj4kf"]
 
+[ext_resource type="Material" uid="uid://cyllvn817sfjv" path="res://Screen_Material.tres" id="1_jc4yw"]
 [ext_resource type="Texture2D" uid="uid://kdj6ktmt2uwl" path="res://Assets/Screen 1 - Orientation.png" id="1_rc168"]
 [ext_resource type="Texture2D" uid="uid://bw0e22ruj5m68" path="res://Assets/Player Arrow.png" id="2_3khgn"]
 [ext_resource type="Script" uid="uid://dmmi81850gxsg" path="res://orientation_screen.gd" id="2_rc168"]
 
 [node name="Orientation Screen" type="Sprite3D" unique_id=578651837 node_paths=PackedStringArray("playerArrow")]
+material_overlay = ExtResource("1_jc4yw")
+cast_shadow = 0
 texture = ExtResource("1_rc168")
 script = ExtResource("2_rc168")
 playerArrow = NodePath("Player Arrow")

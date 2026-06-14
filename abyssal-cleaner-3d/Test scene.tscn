@@ -21,6 +21,14 @@ albedo_texture = ExtResource("2_20hsm")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_634l0"]
 albedo_texture = ExtResource("2_20hsm")
 
+[sub_resource type="Environment" id="Environment_20hsm"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 0.6
+glow_strength = 0.5
+glow_bloom = 0.8
+glow_blend_mode = 0
+
 [node name="Node3D" type="Node3D" unique_id=69203848]
 
 [node name="Submarine" parent="." unique_id=478321623 instance=ExtResource("1_n4lvk")]
@@ -63,3 +71,6 @@ transform = Transform3D(1, 0, 0, 0, -0.96057564, 0.27801886, 0, -0.27801886, -0.
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, -10)
 light_color = Color(1, 0, 0, 1)
 omni_range = 23.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1386287149]
+environment = SubResource("Environment_20hsm")
