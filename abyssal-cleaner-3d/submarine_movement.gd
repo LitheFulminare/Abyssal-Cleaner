@@ -41,6 +41,28 @@ func _physics_process(delta):
 
 	quaternion = yaw_quat * pitch_quat * quaternion
 	
+	var submarine_up = global_basis.y
+	var world_up = Vector3.UP
+
+	# Project both ups onto the plane perpendicular to forward
+	var projected_sub_up = (submarine_up - submarine_up.project(forward)).normalized()
+	var projected_world_up = (world_up - world_up.project(forward)).normalized()
+
+	# 1 = horizontal, 0 = vertical
+	#var level_factor = 1.0 - abs(forward.y)
+	var level_factor = 1.0 - pow(abs(forward.y), 2)
+
+	var roll_angle = projected_sub_up.signed_angle_to(
+	projected_world_up,
+	forward
+	)
+	
+	var auto_level_speed: float = 3
+	var correction = roll_angle * auto_level_speed * level_factor * delta
+
+	var roll_quat = Quaternion(forward, correction)
+	quaternion = roll_quat * quaternion
+	
 	# Causes gimbal lock
 	#rotation.y -= mouse_direction.x * delta * mouse_distance / 500
 	#rotation.x -= mouse_direction.y * delta * mouse_distance / 500
