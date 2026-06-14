@@ -1,25 +1,25 @@
 [gd_scene format=3 uid="uid://c4lwpc03xhwxh"]
 
-[ext_resource type="PackedScene" uid="uid://cmmxi8houq0ky" path="res://submarine.tscn" id="1_n4lvk"]
-[ext_resource type="Texture2D" uid="uid://cu7bnq3gxj1fi" path="res://icon.svg" id="2_20hsm"]
+[ext_resource type="PackedScene" uid="uid://cmmxi8houq0ky" path="res://Player/submarine.tscn" id="1_5c0no"]
+[ext_resource type="Texture2D" uid="uid://cu7bnq3gxj1fi" path="res://icon.svg" id="2_3xrxr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ij3co"]
-albedo_texture = ExtResource("2_20hsm")
+albedo_texture = ExtResource("2_3xrxr")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dc28n"]
-albedo_texture = ExtResource("2_20hsm")
+albedo_texture = ExtResource("2_3xrxr")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oj8n5"]
-albedo_texture = ExtResource("2_20hsm")
+albedo_texture = ExtResource("2_3xrxr")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xaixu"]
-albedo_texture = ExtResource("2_20hsm")
+albedo_texture = ExtResource("2_3xrxr")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0hynj"]
-albedo_texture = ExtResource("2_20hsm")
+albedo_texture = ExtResource("2_3xrxr")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_634l0"]
-albedo_texture = ExtResource("2_20hsm")
+albedo_texture = ExtResource("2_3xrxr")
 
 [sub_resource type="Environment" id="Environment_20hsm"]
 background_mode = 3
@@ -31,7 +31,7 @@ glow_blend_mode = 0
 
 [node name="Node3D" type="Node3D" unique_id=69203848]
 
-[node name="Submarine" parent="." unique_id=478321623 instance=ExtResource("1_n4lvk")]
+[node name="Submarine" parent="." unique_id=478321623 instance=ExtResource("1_5c0no")]
 transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, 6.2909765, 0)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=958655420]

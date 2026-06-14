@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bw0e22ruj5m68"
-path.s3tc="res://.godot/imported/Player Arrow.png-3d3005e30df435c493a8c8fd8a1b375f.s3tc.ctex"
+uid="uid://kdj6ktmt2uwl"
+path.s3tc="res://.godot/imported/Screen 1 - Orientation.png-2b8df0ca68c6a5d9e8f65ee3b78f97d0.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Player Arrow.png"
-dest_files=["res://.godot/imported/Player Arrow.png-3d3005e30df435c493a8c8fd8a1b375f.s3tc.ctex"]
+source_file="res://Assets/Screens/Orientation/Screen 1 - Orientation.png"
+dest_files=["res://.godot/imported/Screen 1 - Orientation.png-2b8df0ca68c6a5d9e8f65ee3b78f97d0.s3tc.ctex"]
 
 [params]
 
@@ -24,7 +24,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
