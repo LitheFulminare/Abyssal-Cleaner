@@ -11,6 +11,8 @@ extends CharacterBody3D
 var mouse_direction: Vector2
 var center: Vector2
 var mouse_distance: float
+var mouse_position: Vector2
+var screen_size: Vector2
 
 var forward_speed: float
 var strafe_speed: float
@@ -25,7 +27,9 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
+		mouse_position = get_viewport().get_mouse_position()
 		_get_mouse_relative_position()
+		mouse_position = clamp(mouse_position, Vector2.ZERO, screen_size)
 		mouse_distance = get_viewport().get_mouse_position().distance_to(center)
 
 func _physics_process(delta):
@@ -33,9 +37,16 @@ func _physics_process(delta):
 	orientationScreen.update_player_arrow(atan2(forward.x, forward.z))
 	
 	# Rotation
-	var yaw_amount = -mouse_direction.x * delta * mouse_distance / 500.0
-	var pitch_amount = -mouse_direction.y * delta * mouse_distance / 500.0
+	var offset = mouse_position - center
 
+	var normalized_offset = Vector2(offset.x / center.x, offset.y / center.y)
+	
+	var yaw_amount = -normalized_offset.x * delta # * turning speed
+	var pitch_amount = -normalized_offset.y * delta # * turning speed
+	
+	#var yaw_amount = -normalized_offset.x * delta * mouse_distance / 500.0
+	#var pitch_amount = -normalized_offset.y * delta * mouse_distance / 500.0
+	
 	var yaw_quat = Quaternion(global_basis.y, yaw_amount)
 	var pitch_quat = Quaternion(global_basis.x, pitch_amount)
 
@@ -97,9 +108,9 @@ func _physics_process(delta):
 	move_and_slide()
 
 func calculate_center() -> void:
-	center = get_viewport().get_visible_rect().size
-	center = Vector2(center.x/2, center.y/2)
+	screen_size = get_viewport().get_visible_rect().size
+	center = Vector2(screen_size.x/2, screen_size.y/2)
 
 func _get_mouse_relative_position() -> void:
-	mouse_direction = get_viewport().get_mouse_position() - center
+	mouse_direction = mouse_position - center
 	mouse_direction = mouse_direction.normalized()
