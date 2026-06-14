@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://kdj6ktmt2uwl" path="res://Assets/Screens/Orientation/Screen 1 - Orientation.png" id="1_rc168"]
 [ext_resource type="Texture2D" uid="uid://bw0e22ruj5m68" path="res://Assets/Screens/Orientation/Player Arrow.png" id="2_3khgn"]
 [ext_resource type="Script" uid="uid://dmmi81850gxsg" path="res://Assets/Screens/Orientation/orientation_screen.gd" id="2_rc168"]
+[ext_resource type="Texture2D" uid="uid://calgvcdjkkgep" path="res://Assets/Screens/Orientation/Pointer.png" id="5_1rg3u"]
 
 [node name="Orientation Screen" type="Sprite3D" unique_id=578651837 node_paths=PackedStringArray("playerArrow")]
 material_overlay = ExtResource("1_jc4yw")
@@ -14,4 +15,15 @@ playerArrow = NodePath("Player Arrow")
 
 [node name="Player Arrow" type="Sprite3D" parent="." unique_id=828074123]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0.462, 0.024477601)
+render_priority = 1
 texture = ExtResource("2_3khgn")
+
+[node name="Pitch Gaugue" type="Sprite3D" parent="." unique_id=919609978]
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, -4.199188, -0.013518631, 0.024477601)
+render_priority = 1
+texture = ExtResource("5_1rg3u")
+
+[node name="Yaw Gauge" type="Sprite3D" parent="." unique_id=18663514]
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 4.293895, -0.013518631, 0.024477601)
+render_priority = 1
+texture = ExtResource("5_1rg3u")
