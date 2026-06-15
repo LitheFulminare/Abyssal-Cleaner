@@ -27,12 +27,11 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -175.0
-offset_top = -175.0
-offset_right = 175.0
-offset_bottom = 175.0
+offset_left = -350.0
+offset_top = -350.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(2, 2)
 
 [node name="AH Texture" type="TextureRect" parent="Control" unique_id=2879547]
 layout_mode = 1

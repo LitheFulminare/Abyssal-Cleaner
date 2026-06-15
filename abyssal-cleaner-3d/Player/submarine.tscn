@@ -10,12 +10,15 @@ viewport_path = NodePath("SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y7148"]
 resource_local_to_scene = true
+shading_mode = 0
 albedo_texture = SubResource("ViewportTexture_fjnjb")
+disable_receive_shadows = true
 
-[node name="Submarine" type="CharacterBody3D" unique_id=478321623 node_paths=PackedStringArray("orientationScreen")]
+[node name="Submarine" type="CharacterBody3D" unique_id=478321623 node_paths=PackedStringArray("orientationScreen", "artificial_horizon")]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 script = ExtResource("1_3uq8f")
 orientationScreen = NodePath("Orientation Screen")
+artificial_horizon = NodePath("SubViewport/Artificial Horizon")
 
 [node name="Orientation Screen" parent="." unique_id=578651837 instance=ExtResource("3_qvldv")]
 transform = Transform3D(0.04, 0, 0, 0, 0.039999984, 0, 0, 0, 0.039999984, 0.5380652, -0.32144433, -0.6253317)
@@ -29,7 +32,8 @@ transform = Transform3D(0.04, 0, 0, 0, 0.039999984, 0, 0, 0, 0.039999984, 0.5380
 [node name="AH Screen" type="CSGBox3D" parent="." unique_id=389532713]
 transform = Transform3D(-0.225, 1.9670118e-08, -1.9670118e-08, -1.967012e-08, -0.225, 1.9670122e-08, 1.9670116e-08, -1.9670123e-08, -0.225, 0, -0.3184188, -0.597707)
 material_override = SubResource("StandardMaterial3D_y7148")
-size = Vector3(1, 1, 0.1)
+cast_shadow = 0
+size = Vector3(1, 1, 0)
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=1424238813]
 transparent_bg = true

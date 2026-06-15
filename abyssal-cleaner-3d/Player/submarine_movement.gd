@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
 @export var orientationScreen: OrientationScreen
+@export var artificial_horizon: ArtificialHorizon
 
 @export var max_forward_speed := 20.0
 @export var max_strafe_speed := 10.0
@@ -35,6 +36,10 @@ func _input(event: InputEvent) -> void:
 func _physics_process(delta):
 	var forward = -global_basis.z
 	orientationScreen.update_player_arrow(atan2(forward.x, forward.z))
+	var pitch = asin(forward.y)
+	artificial_horizon.update_horizon(pitch)
+	#artificial_horizon.update_horizon(asin(forward.y))
+	print(rad_to_deg(pitch))
 	
 	# Rotation
 	var offset = mouse_position - center
