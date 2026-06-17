@@ -15,6 +15,10 @@ run/main_scene="uid://c4lwpc03xhwxh"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[debug]
+
+gdscript/warnings/untyped_declaration=1
+
 [input]
 
 Forward={
@@ -65,3 +69,4 @@ Down={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+anti_aliasing/quality/msaa_3d=1

@@ -32,8 +32,8 @@ func _input(event: InputEvent) -> void:
 		mouse_position = clamp(mouse_position, Vector2.ZERO, screen_size)
 		mouse_distance = get_viewport().get_mouse_position().distance_to(center)
 
-func _physics_process(delta):
-	var forward = -global_basis.z
+func _physics_process(delta:float) -> void:
+	var forward: Vector3 = -global_basis.z
 	orientationScreen.update_player_arrow(atan2(forward.x, forward.z))
 	
 	#var up = global_basis.y
@@ -43,41 +43,41 @@ func _physics_process(delta):
 	
 	
 	# Rotation
-	var offset = mouse_position - center
+	var offset: Vector2 = mouse_position - center
 
-	var normalized_offset = Vector2(offset.x / center.x, offset.y / center.y)
+	var normalized_offset: Vector2 = Vector2(offset.x / center.x, offset.y / center.y)
 	
-	var yaw_amount = -normalized_offset.x * delta # * turning speed
-	var pitch_amount = -normalized_offset.y * delta # * turning speed
+	var yaw_amount: float = -normalized_offset.x * delta # * turning speed
+	var pitch_amount: float = -normalized_offset.y * delta # * turning speed
 	
 	#var yaw_amount = -normalized_offset.x * delta * mouse_distance / 500.0
 	#var pitch_amount = -normalized_offset.y * delta * mouse_distance / 500.0
 	
-	var yaw_quat = Quaternion(global_basis.y, yaw_amount)
-	var pitch_quat = Quaternion(global_basis.x, pitch_amount)
+	var yaw_quat: Quaternion = Quaternion(global_basis.y, yaw_amount)
+	var pitch_quat: Quaternion = Quaternion(global_basis.x, pitch_amount)
 
 	quaternion = yaw_quat * pitch_quat * quaternion
 	
-	var submarine_up = global_basis.y
-	var world_up = Vector3.UP
+	var submarine_up: Vector3 = global_basis.y
+	var world_up: Vector3 = Vector3.UP
 
 	# Project both ups onto the plane perpendicular to forward
-	var projected_sub_up = (submarine_up - submarine_up.project(forward)).normalized()
-	var projected_world_up = (world_up - world_up.project(forward)).normalized()
+	var projected_sub_up: Vector3 = (submarine_up - submarine_up.project(forward)).normalized()
+	var projected_world_up: Vector3 = (world_up - world_up.project(forward)).normalized()
 
 	# 1 = horizontal, 0 = vertical
 	#var level_factor = 1.0 - abs(forward.y)
-	var level_factor = 1.0 - pow(abs(forward.y), 2)
+	var level_factor: float = 1.0 - pow(abs(forward.y), 2)
 
-	var roll_angle = projected_sub_up.signed_angle_to(
+	var roll_angle: float = projected_sub_up.signed_angle_to(
 	projected_world_up,
 	forward
 	)
 	
 	var auto_level_speed: float = 3
-	var correction = roll_angle * auto_level_speed * level_factor * delta
+	var correction: float = roll_angle * auto_level_speed * level_factor * delta
 
-	var roll_quat = Quaternion(forward, correction)
+	var roll_quat: Quaternion = Quaternion(forward, correction)
 	quaternion = roll_quat * quaternion
 	
 	orientationScreen.update_artificial_horizon(asin(forward.y), roll_angle)
@@ -94,7 +94,7 @@ func _physics_process(delta):
 	elif Input.is_action_pressed("Backwards"):
 		target_forward = -max_forward_speed * 0.5
 
-	var forward_rate = acceleration if abs(target_forward) > abs(forward_speed) else deceleration
+	var forward_rate:float = acceleration if abs(target_forward) > abs(forward_speed) else deceleration
 
 	forward_speed = move_toward(forward_speed,target_forward,forward_rate * delta)
 
@@ -106,7 +106,7 @@ func _physics_process(delta):
 	elif Input.is_action_pressed("Left"):
 		target_strafe = -max_strafe_speed
 
-	var strafe_rate = acceleration if abs(target_strafe) > abs(strafe_speed) else deceleration
+	var strafe_rate: float = acceleration if abs(target_strafe) > abs(strafe_speed) else deceleration
 
 	strafe_speed = move_toward(strafe_speed,target_strafe,strafe_rate * delta)
 
