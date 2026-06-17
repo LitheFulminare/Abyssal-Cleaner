@@ -35,7 +35,12 @@ func _input(event: InputEvent) -> void:
 func _physics_process(delta):
 	var forward = -global_basis.z
 	orientationScreen.update_player_arrow(atan2(forward.x, forward.z))
-	orientationScreen.update_artificial_horizon(asin(forward.y))
+	
+	#var up = global_basis.y
+	#var projected_up = (up - up.project(forward)).normalized()
+	#var projected_world_up = (Vector3.UP - Vector3.UP.project(forward)).normalized()
+	#var roll = projected_up.signed_angle_to(projected_world_up,forward)
+	
 	
 	# Rotation
 	var offset = mouse_position - center
@@ -74,6 +79,8 @@ func _physics_process(delta):
 
 	var roll_quat = Quaternion(forward, correction)
 	quaternion = roll_quat * quaternion
+	
+	orientationScreen.update_artificial_horizon(asin(forward.y), roll_angle)
 	
 	# Causes gimbal lock
 	#rotation.y -= mouse_direction.x * delta * mouse_distance / 500
