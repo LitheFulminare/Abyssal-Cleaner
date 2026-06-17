@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://np7wdvg0plvh" path="res://Player/artificial_horizon.gd" id="1_7wep3"]
 [ext_resource type="Texture2D" uid="uid://dio0npl07npxv" path="res://Assets/Screens/Artificial Horizon/AH Scrolling Texture.png" id="1_qvgv0"]
 [ext_resource type="Texture2D" uid="uid://f85hmpxfmnh4" path="res://Assets/Screens/Artificial Horizon/AH Frame.png" id="2_3s2vl"]
+[ext_resource type="Texture2D" uid="uid://c2apsdjwb67es" path="res://Assets/Screens/Artificial Horizon/Arrow.png" id="3_640iv"]
 
 [node name="Artificial Horizon" type="Control" unique_id=1693072257 node_paths=PackedStringArray("ah_texture", "pivot")]
 layout_mode = 3
@@ -55,6 +56,23 @@ scale = Vector2(0.5, 0.5)
 pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("1_qvgv0")
 
+[node name="Arrow" type="TextureRect" parent="Pivot Container" unique_id=2086066659]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.5
+offset_top = -179.5
+offset_right = 34.5
+offset_bottom = -114.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("3_640iv")
+
 [node name="Frame" type="TextureRect" parent="." unique_id=1304170106]
 layout_mode = 1
 anchors_preset = 8
@@ -70,3 +88,4 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("2_3s2vl")
+metadata/_edit_lock_ = true
