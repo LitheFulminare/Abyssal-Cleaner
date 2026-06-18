@@ -5,6 +5,7 @@ extends Sprite3D
 @export var artificial_horizon: ArtificialHorizon
 @export var pitch_label: Label3D
 @export var roll_label: Label3D
+@export var heading_label: Label3D
 
 func update_player_arrow(new_rotation: float) -> void:
 	playerArrow.rotation.z = new_rotation

@@ -19,7 +19,7 @@ uv1_scale = Vector3(-1, 1, 1)
 disable_receive_shadows = true
 stencil_flags = 2
 
-[node name="Orientation Screen" type="Sprite3D" unique_id=578651837 node_paths=PackedStringArray("playerArrow", "artificial_horizon", "pitch_label", "roll_label")]
+[node name="Orientation Screen" type="Sprite3D" unique_id=578651837 node_paths=PackedStringArray("playerArrow", "artificial_horizon", "pitch_label", "roll_label", "heading_label")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 material_overlay = ExtResource("1_jc4yw")
 cast_shadow = 0
@@ -29,6 +29,7 @@ playerArrow = NodePath("Player Arrow")
 artificial_horizon = NodePath("SubViewport/Artificial Horizon")
 pitch_label = NodePath("Numbers/Pitch")
 roll_label = NodePath("Numbers/Roll")
+heading_label = NodePath("Numbers/Heading")
 
 [node name="Player Arrow" type="Sprite3D" parent="." unique_id=828074123]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.031194925, 1.1432424, 0.024477601)
@@ -42,9 +43,11 @@ cast_shadow = 0
 size = Vector3(1, 1, 0)
 
 [node name="Numbers" type="Node3D" parent="." unique_id=1920637933]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
 
 [node name="Pitch" type="Label3D" parent="Numbers" unique_id=318467739]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -6.785539, -3.4837754, 0)
+render_priority = 1
 text = "180"
 font = ExtResource("5_64byu")
 font_size = 60
@@ -52,12 +55,14 @@ horizontal_alignment = 2
 
 [node name="Degree" type="Label3D" parent="Numbers" unique_id=1058939207]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -6.559648, -3.123885, 0)
+render_priority = 1
 text = "0"
 font = ExtResource("5_64byu")
 font_size = 18
 
 [node name="Roll" type="Label3D" parent="Numbers" unique_id=882643919]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -6.785539, -5.6448607, 0)
+render_priority = 1
 text = "180"
 font = ExtResource("5_64byu")
 font_size = 60
@@ -65,6 +70,22 @@ horizontal_alignment = 2
 
 [node name="Degree 2" type="Label3D" parent="Numbers" unique_id=1511758195]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -6.559648, -5.2849703, 0)
+render_priority = 1
+text = "0"
+font = ExtResource("5_64byu")
+font_size = 18
+
+[node name="Heading" type="Label3D" parent="Numbers" unique_id=414266022]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 3.329918, -5.6448607, 0)
+render_priority = 1
+text = "180"
+font = ExtResource("5_64byu")
+font_size = 60
+horizontal_alignment = 2
+
+[node name="Degree 3" type="Label3D" parent="Numbers" unique_id=1549622067]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 3.555809, -5.2849703, 0)
+render_priority = 1
 text = "0"
 font = ExtResource("5_64byu")
 font_size = 18
