@@ -34,8 +34,6 @@ func _input(event: InputEvent) -> void:
 
 func _physics_process(delta:float) -> void:
 	var forward: Vector3 = -global_basis.z
-	yaw_rad = atan2(forward.x, forward.z)
-	orientationScreen.update_player_arrow(yaw_rad)
 	
 	#var up = global_basis.y
 	#var projected_up = (up - up.project(forward)).normalized()
@@ -67,7 +65,6 @@ func _physics_process(delta:float) -> void:
 	var projected_world_up: Vector3 = (world_up - world_up.project(forward)).normalized()
 
 	# 1 = horizontal, 0 = vertical
-	#var level_factor = 1.0 - abs(forward.y)
 	var level_factor: float = 1.0 - pow(abs(forward.y), 2)
 
 	var roll_angle: float = projected_sub_up.signed_angle_to(
@@ -81,7 +78,9 @@ func _physics_process(delta:float) -> void:
 	var roll_quat: Quaternion = Quaternion(forward, correction)
 	quaternion = roll_quat * quaternion
 	
-	orientationScreen.update_artificial_horizon(asin(forward.y), roll_angle)
+	yaw_rad = atan2(forward.x, forward.z)
+	orientationScreen.update_screen(yaw_rad, asin(forward.y), roll_angle)
+	#orientationScreen.update_artificial_horizon(asin(forward.y), roll_angle)
 	
 	# Causes gimbal lock
 	#rotation.y -= mouse_direction.x * delta * mouse_distance / 500
