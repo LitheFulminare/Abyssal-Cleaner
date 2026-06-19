@@ -17,8 +17,8 @@ var screen_size: Vector2
 var forward_speed: float
 var strafe_speed: float
 
-var yaw := 0.0
-var pitch := 0.0
+var yaw_rad: float
+var pitch: float
 
 func _ready() -> void:
 	#center = DisplayServer.screen_get_size() # gets actual screen resolution
@@ -34,7 +34,8 @@ func _input(event: InputEvent) -> void:
 
 func _physics_process(delta:float) -> void:
 	var forward: Vector3 = -global_basis.z
-	orientationScreen.update_player_arrow(atan2(forward.x, forward.z))
+	yaw_rad = atan2(forward.x, forward.z)
+	orientationScreen.update_player_arrow(yaw_rad)
 	
 	#var up = global_basis.y
 	#var projected_up = (up - up.project(forward)).normalized()

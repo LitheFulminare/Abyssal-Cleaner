@@ -32,7 +32,7 @@ roll_label = NodePath("Numbers/Roll")
 heading_label = NodePath("Numbers/Heading")
 
 [node name="Player Arrow" type="Sprite3D" parent="." unique_id=828074123]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.031194925, 1.1432424, 0.024477601)
+transform = Transform3D(-8.742278e-08, -2, 0, 2, -8.742278e-08, 0, 0, 0, 2, 0.047888517, 1.2023814, 0.024477601)
 render_priority = 1
 texture = ExtResource("2_3khgn")
 
