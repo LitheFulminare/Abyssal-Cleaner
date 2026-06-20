@@ -7,6 +7,7 @@ extends Sprite3D
 @export var roll_label: Label3D
 @export var heading_label: Label3D
 
+## Updates the numbers on the right screen, artificial horizon roll and pitch, and the compass direction.
 func update_screen(yaw_rad: float, pitch_rad: float, roll_rad: float) -> void:
 	playerArrow.rotation.z = yaw_rad
 	artificial_horizon.update_horizon(pitch_rad, roll_rad)
