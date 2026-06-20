@@ -22,6 +22,7 @@ render_priority = 1
 texture = ExtResource("3_mf0ca")
 
 [node name="Speed display" type="Label3D" parent="." unique_id=1399773911]
+transform = Transform3D(3.5900002, 0, 0, 0, 3.5899997, 0, 0, 0, 3.5899997, -8.052351, 1.0476328, 0.01)
 render_priority = 1
 text = "99"
 font = ExtResource("5_g77em")
