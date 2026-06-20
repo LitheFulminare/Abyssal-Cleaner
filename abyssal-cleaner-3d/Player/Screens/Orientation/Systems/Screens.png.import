@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmm80fu4xe4ls"
-path="res://.godot/imported/R Weapon.png-e8a1f686de5138942d8ec71f01d217d2.ctex"
+uid="uid://7a5e087h247y"
+path="res://.godot/imported/Screens.png-31b1c3009559f449e7ec1e781834a00c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Screens/Orientation/Systems/R Weapon.png"
-dest_files=["res://.godot/imported/R Weapon.png-e8a1f686de5138942d8ec71f01d217d2.ctex"]
+source_file="res://Player/Screens/Orientation/Systems/Screens.png"
+dest_files=["res://.godot/imported/Screens.png-31b1c3009559f449e7ec1e781834a00c.ctex"]
 
 [params]
 

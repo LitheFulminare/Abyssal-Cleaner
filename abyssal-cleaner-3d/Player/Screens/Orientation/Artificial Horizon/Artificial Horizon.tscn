@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://7i18r1teg3yv"]
 
-[ext_resource type="Script" uid="uid://np7wdvg0plvh" path="res://Player/artificial_horizon.gd" id="1_7wep3"]
-[ext_resource type="Texture2D" uid="uid://dio0npl07npxv" path="res://Assets/Screens/Artificial Horizon/AH Scrolling Texture.png" id="1_qvgv0"]
-[ext_resource type="Texture2D" uid="uid://f85hmpxfmnh4" path="res://Assets/Screens/Artificial Horizon/AH Frame.png" id="2_3s2vl"]
-[ext_resource type="Texture2D" uid="uid://c2apsdjwb67es" path="res://Assets/Screens/Artificial Horizon/Arrow.png" id="3_640iv"]
+[ext_resource type="Script" uid="uid://np7wdvg0plvh" path="res://Player/Screens/Orientation/Artificial Horizon/artificial_horizon.gd" id="1_7wep3"]
+[ext_resource type="Texture2D" uid="uid://dio0npl07npxv" path="res://Player/Screens/Orientation/Artificial Horizon/AH Scrolling Texture.png" id="1_qvgv0"]
+[ext_resource type="Texture2D" uid="uid://f85hmpxfmnh4" path="res://Player/Screens/Orientation/Artificial Horizon/AH Frame.png" id="2_3s2vl"]
+[ext_resource type="Texture2D" uid="uid://c2apsdjwb67es" path="res://Player/Screens/Orientation/Artificial Horizon/Arrow.png" id="3_640iv"]
 
 [node name="Artificial Horizon" type="Control" unique_id=1693072257 node_paths=PackedStringArray("ah_texture", "pivot")]
 layout_mode = 3

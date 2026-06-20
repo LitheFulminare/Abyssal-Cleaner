@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://r375g63wj4kf"]
 
-[ext_resource type="Material" uid="uid://cyllvn817sfjv" path="res://Assets/Screens/Screen_Material.tres" id="1_jc4yw"]
-[ext_resource type="Texture2D" uid="uid://ddx2tb7lfhiiq" path="res://Assets/Screens/Orientation/Right Screen.png" id="2_1rg3u"]
-[ext_resource type="Texture2D" uid="uid://bw0e22ruj5m68" path="res://Assets/Screens/Orientation/Player Arrow.png" id="2_3khgn"]
-[ext_resource type="Script" uid="uid://dmmi81850gxsg" path="res://Assets/Screens/Orientation/orientation_screen.gd" id="2_rc168"]
-[ext_resource type="PackedScene" uid="uid://7i18r1teg3yv" path="res://Player/Artificial Horizon.tscn" id="5_1rg3u"]
+[ext_resource type="Material" uid="uid://cyllvn817sfjv" path="res://Player/Screens/Screen_Material.tres" id="1_jc4yw"]
+[ext_resource type="Texture2D" uid="uid://ddx2tb7lfhiiq" path="res://Player/Screens/Orientation/Right Screen.png" id="2_1rg3u"]
+[ext_resource type="Texture2D" uid="uid://bw0e22ruj5m68" path="res://Player/Screens/Orientation/Player Arrow.png" id="2_3khgn"]
+[ext_resource type="Script" uid="uid://dmmi81850gxsg" path="res://Player/Screens/Orientation/orientation_screen.gd" id="2_rc168"]
+[ext_resource type="PackedScene" uid="uid://7i18r1teg3yv" path="res://Player/Screens/Orientation/Artificial Horizon/Artificial Horizon.tscn" id="5_1rg3u"]
 [ext_resource type="FontFile" uid="uid://npl5gipc8g37" path="res://Assets/Fonts/ds_digital/DS-DIGI.TTF" id="5_64byu"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_64byu"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://di7sfeit07nqh"
-path="res://.godot/imported/L Weapon.png-77222beec7ce3c60baeb3422ec57aaf2.ctex"
+uid="uid://b618drv4eh0gr"
+path="res://.godot/imported/Ext Lights.png-0ed2673e22e132c3afd4270d56623b5b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Screens/Orientation/Systems/L Weapon.png"
-dest_files=["res://.godot/imported/L Weapon.png-77222beec7ce3c60baeb3422ec57aaf2.ctex"]
+source_file="res://Player/Screens/Orientation/Systems/Ext Lights.png"
+dest_files=["res://.godot/imported/Ext Lights.png-0ed2673e22e132c3afd4270d56623b5b.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b618drv4eh0gr"
-path="res://.godot/imported/Ext Lights.png-858aa3b8b9da3b955f49089872ce9345.ctex"
+uid="uid://6kq0jeav3rpn"
+path="res://.godot/imported/Needle.png-c85b915a126537af67c76396c4a5a649.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Screens/Orientation/Systems/Ext Lights.png"
-dest_files=["res://.godot/imported/Ext Lights.png-858aa3b8b9da3b955f49089872ce9345.ctex"]
+source_file="res://Player/Screens/Left Screen/Needle.png"
+dest_files=["res://.godot/imported/Needle.png-c85b915a126537af67c76396c4a5a649.ctex"]
 
 [params]
 

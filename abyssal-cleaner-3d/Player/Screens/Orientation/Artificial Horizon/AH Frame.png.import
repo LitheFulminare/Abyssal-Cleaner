@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2apsdjwb67es"
-path.s3tc="res://.godot/imported/Arrow.png-e7b95f11ee1fa47296ea6469043332f5.s3tc.ctex"
+uid="uid://f85hmpxfmnh4"
+path.s3tc="res://.godot/imported/AH Frame.png-f33964c76afa8b2ca5877c2db31a56a9.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Screens/Artificial Horizon/Arrow.png"
-dest_files=["res://.godot/imported/Arrow.png-e7b95f11ee1fa47296ea6469043332f5.s3tc.ctex"]
+source_file="res://Player/Screens/Orientation/Artificial Horizon/AH Frame.png"
+dest_files=["res://.godot/imported/AH Frame.png-f33964c76afa8b2ca5877c2db31a56a9.s3tc.ctex"]
 
 [params]
 
@@ -24,7 +24,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -38,4 +38,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dyx14p5q8fc1a" path="res://Player/submarine_movement.gd" id="1_3uq8f"]
 [ext_resource type="PackedScene" uid="uid://csh3st7qcjppx" path="res://Player/Submarine_HUD.tscn" id="2_k4f85"]
-[ext_resource type="PackedScene" uid="uid://ba7gkhwyineqm" path="res://Player/left_screen.tscn" id="3_fjnjb"]
-[ext_resource type="PackedScene" uid="uid://r375g63wj4kf" path="res://Assets/Screens/Orientation/orientation_screen.tscn" id="3_qvldv"]
+[ext_resource type="PackedScene" uid="uid://ba7gkhwyineqm" path="res://Player/Screens/Left Screen/left_screen.tscn" id="3_fjnjb"]
+[ext_resource type="PackedScene" uid="uid://r375g63wj4kf" path="res://Player/Screens/Orientation/orientation_screen.tscn" id="3_qvldv"]
 
 [node name="Submarine" type="CharacterBody3D" unique_id=478321623 node_paths=PackedStringArray("orientationScreen")]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)

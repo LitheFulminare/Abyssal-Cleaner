@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6kq0jeav3rpn"
-path="res://.godot/imported/Needle.png-2e01f8e5c115d381b92863d92adc487e.ctex"
+uid="uid://bd7da3tc217we"
+path="res://.godot/imported/Sonar.png-b538b36587786afd90b97c7618c06813.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Screens/Left Screen/Needle.png"
-dest_files=["res://.godot/imported/Needle.png-2e01f8e5c115d381b92863d92adc487e.ctex"]
+source_file="res://Player/Screens/Orientation/Systems/Sonar.png"
+dest_files=["res://.godot/imported/Sonar.png-b538b36587786afd90b97c7618c06813.ctex"]
 
 [params]
 
