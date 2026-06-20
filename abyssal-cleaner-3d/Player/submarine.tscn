@@ -5,10 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://ba7gkhwyineqm" path="res://Player/Screens/Left Screen/left_screen.tscn" id="3_fjnjb"]
 [ext_resource type="PackedScene" uid="uid://r375g63wj4kf" path="res://Player/Screens/Orientation/orientation_screen.tscn" id="3_qvldv"]
 
-[node name="Submarine" type="CharacterBody3D" unique_id=478321623 node_paths=PackedStringArray("orientationScreen")]
+[node name="Submarine" type="CharacterBody3D" unique_id=478321623 node_paths=PackedStringArray("orientationScreen", "left_screen")]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 script = ExtResource("1_3uq8f")
 orientationScreen = NodePath("Orientation Screen")
+left_screen = NodePath("Left Screen")
 
 [node name="Orientation Screen" parent="." unique_id=578651837 instance=ExtResource("3_qvldv")]
 transform = Transform3D(0.03, 0, 0, 0, 0.029999994, 0, 0, 0, 0.029999994, 0.50173676, -0.32144424, -0.7198048)

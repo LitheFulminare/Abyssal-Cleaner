@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
 @export var orientationScreen: OrientationScreen
+@export var left_screen: LeftScreen
 
 @export var max_forward_speed := 20.0
 @export var max_strafe_speed := 10.0
@@ -102,6 +103,7 @@ func _physics_process(delta:float) -> void:
 	
 	# HUD
 	orientationScreen.update_screen(atan2(forward.x, forward.z), asin(forward.y), roll_angle)
+	left_screen.update_display(velocity.length())
 
 func calculate_center() -> void:
 	screen_size = get_viewport().get_visible_rect().size
