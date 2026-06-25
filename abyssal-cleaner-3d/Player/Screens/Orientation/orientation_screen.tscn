@@ -1,27 +1,47 @@
 [gd_scene format=3 uid="uid://r375g63wj4kf"]
 
-[ext_resource type="Material" uid="uid://cyllvn817sfjv" path="res://Player/Screens/Screen_Material.tres" id="1_jc4yw"]
 [ext_resource type="Texture2D" uid="uid://ddx2tb7lfhiiq" path="res://Player/Screens/Orientation/Right Screen.png" id="2_1rg3u"]
 [ext_resource type="Texture2D" uid="uid://bw0e22ruj5m68" path="res://Player/Screens/Orientation/Player Arrow.png" id="2_3khgn"]
 [ext_resource type="Script" uid="uid://dmmi81850gxsg" path="res://Player/Screens/Orientation/orientation_screen.gd" id="2_rc168"]
 [ext_resource type="PackedScene" uid="uid://7i18r1teg3yv" path="res://Player/Screens/Orientation/Artificial Horizon/Artificial Horizon.tscn" id="5_1rg3u"]
 [ext_resource type="FontFile" uid="uid://npl5gipc8g37" path="res://Assets/Fonts/ds_digital/DS-DIGI.TTF" id="5_64byu"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_64byu"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8d6tc"]
+transparency = 1
+albedo_color = Color(1.5720325, 1.5720325, 1.5720325, 1)
+albedo_texture = ExtResource("2_1rg3u")
+emission_enabled = true
+emission = Color(1.5720325, 1.5720325, 1.5720325, 1)
+emission_operator = 1
+emission_texture = ExtResource("2_1rg3u")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7von3"]
+transparency = 1
+albedo_color = Color(1.5720325, 1.5720325, 1.5720325, 1)
+albedo_texture = ExtResource("2_3khgn")
+emission_enabled = true
+emission = Color(1.5720325, 1.5720325, 1.5720325, 1)
+emission_operator = 1
+emission_texture = ExtResource("2_3khgn")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_8d6tc"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qn1c0"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qkpm2"]
 resource_local_to_scene = true
 render_priority = 1
-shading_mode = 0
-albedo_texture = SubResource("ViewportTexture_64byu")
+transparency = 1
+albedo_color = Color(1.4807141, 1.4807141, 1.4807141, 1)
+albedo_texture = SubResource("ViewportTexture_8d6tc")
+emission_enabled = true
+emission = Color(1.4807141, 1.4807141, 1.4807141, 1)
+emission_operator = 1
+emission_texture = SubResource("ViewportTexture_8d6tc")
 uv1_scale = Vector3(-1, 1, 1)
-disable_receive_shadows = true
-stencil_flags = 2
 
 [node name="Orientation Screen" type="Sprite3D" unique_id=578651837 node_paths=PackedStringArray("playerArrow", "artificial_horizon", "pitch_label", "roll_label", "heading_label")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-material_overlay = ExtResource("1_jc4yw")
+material_override = SubResource("StandardMaterial3D_8d6tc")
 cast_shadow = 0
 texture = ExtResource("2_1rg3u")
 script = ExtResource("2_rc168")
@@ -33,14 +53,15 @@ heading_label = NodePath("Numbers/Heading")
 
 [node name="Player Arrow" type="Sprite3D" parent="." unique_id=828074123]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.047888517, 1.2023814, 0.024477601)
+material_override = SubResource("StandardMaterial3D_7von3")
 render_priority = 1
 texture = ExtResource("2_3khgn")
 
 [node name="AH Screen" type="CSGBox3D" parent="." unique_id=248117885]
 transform = Transform3D(6.985, -6.1064793e-07, 6.10648e-07, 6.10648e-07, 6.985, -6.10648e-07, -6.1064793e-07, 6.1064804e-07, 6.985, -9.356157, 1.2955058, 0.39708978)
-material_override = SubResource("StandardMaterial3D_qn1c0")
 cast_shadow = 0
 size = Vector3(1, 1, 0)
+material = SubResource("StandardMaterial3D_qkpm2")
 
 [node name="Numbers" type="Node3D" parent="." unique_id=1920637933]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
@@ -48,6 +69,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
 [node name="Pitch" type="Label3D" parent="Numbers" unique_id=318467739]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -6.785539, -3.4837754, 0)
 render_priority = 1
+modulate = Color(1.5720325, 1.5720325, 1.5720325, 1)
 text = "180"
 font = ExtResource("5_64byu")
 font_size = 60
@@ -56,6 +78,7 @@ horizontal_alignment = 2
 [node name="Degree" type="Label3D" parent="Numbers" unique_id=1058939207]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -6.559648, -3.123885, 0)
 render_priority = 1
+modulate = Color(1.5720325, 1.5720325, 1.5720325, 1)
 text = "0"
 font = ExtResource("5_64byu")
 font_size = 18
@@ -63,6 +86,7 @@ font_size = 18
 [node name="Roll" type="Label3D" parent="Numbers" unique_id=882643919]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -6.785539, -5.6448607, 0)
 render_priority = 1
+modulate = Color(1.5720325, 1.5720325, 1.5720325, 1)
 text = "180"
 font = ExtResource("5_64byu")
 font_size = 60
@@ -71,6 +95,7 @@ horizontal_alignment = 2
 [node name="Degree 2" type="Label3D" parent="Numbers" unique_id=1511758195]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -6.559648, -5.2849703, 0)
 render_priority = 1
+modulate = Color(1.5720325, 1.5720325, 1.5720325, 1)
 text = "0"
 font = ExtResource("5_64byu")
 font_size = 18
@@ -78,6 +103,7 @@ font_size = 18
 [node name="Heading" type="Label3D" parent="Numbers" unique_id=414266022]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 3.329918, -5.6448607, 0)
 render_priority = 1
+modulate = Color(1.5720325, 1.5720325, 1.5720325, 1)
 text = "180"
 font = ExtResource("5_64byu")
 font_size = 60
@@ -86,12 +112,12 @@ horizontal_alignment = 2
 [node name="Degree 3" type="Label3D" parent="Numbers" unique_id=1549622067]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 3.555809, -5.2849703, 0)
 render_priority = 1
+modulate = Color(1.5720325, 1.5720325, 1.5720325, 1)
 text = "0"
 font = ExtResource("5_64byu")
 font_size = 18
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=1957549300]
-disable_3d = true
 transparent_bg = true
 handle_input_locally = false
 size = Vector2i(700, 700)

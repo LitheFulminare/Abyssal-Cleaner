@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ba7gkhwyineqm"]
 
-[ext_resource type="Material" uid="uid://cyllvn817sfjv" path="res://Player/Screens/Screen_Material.tres" id="1_haeuj"]
+[ext_resource type="Material" uid="uid://nx6q0sgto68v" path="res://Player/Screens/Screen_Base_Material.tres" id="1_haeuj"]
 [ext_resource type="Texture2D" uid="uid://bnj3rj2u5f2ug" path="res://Player/Screens/Left Screen/Left Screen.png" id="2_e3w78"]
 [ext_resource type="Script" uid="uid://bhv0nobtxpj7s" path="res://Player/Screens/Left Screen/left_screen.gd" id="3_1rth6"]
 [ext_resource type="Texture2D" uid="uid://6kq0jeav3rpn" path="res://Player/Screens/Left Screen/Needle.png" id="3_mf0ca"]
