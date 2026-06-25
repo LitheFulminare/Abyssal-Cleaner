@@ -64,12 +64,14 @@ transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 0.26751986, 0, 0.9999
 material_override = SubResource("StandardMaterial3D_634l0")
 size = Vector3(1.2824173, 184.91476, 27.594177)
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1984013795]
+[node name="(Editor) DirectionalLight" type="DirectionalLight3D" parent="." unique_id=1984013795]
 transform = Transform3D(1, 0, 0, 0, -0.96057564, 0.27801886, 0, -0.27801886, -0.96057564, 0, 0.77537215, 0)
+editor_only = true
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1733991001]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, -10)
 light_color = Color(1, 0, 0, 1)
+shadow_enabled = true
 omni_range = 23.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1386287149]

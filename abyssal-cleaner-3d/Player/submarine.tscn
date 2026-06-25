@@ -4,8 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://csh3st7qcjppx" path="res://Player/Submarine_HUD.tscn" id="2_k4f85"]
 [ext_resource type="PackedScene" uid="uid://ba7gkhwyineqm" path="res://Player/Screens/Left Screen/left_screen.tscn" id="3_fjnjb"]
 [ext_resource type="PackedScene" uid="uid://r375g63wj4kf" path="res://Player/Screens/Orientation/orientation_screen.tscn" id="3_qvldv"]
+[ext_resource type="Texture2D" uid="uid://cu7bnq3gxj1fi" path="res://icon.svg" id="5_lp6rj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fjnjb"]
+rim = 0.1
+rim_texture = ExtResource("5_lp6rj")
+stencil_flags = 2
 
 [node name="Submarine" type="CharacterBody3D" unique_id=478321623 node_paths=PackedStringArray("orientationScreen", "left_screen")]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
@@ -27,36 +31,72 @@ transform = Transform3D(0.03, 0, 0, 0, 0.029999986, 0, 0, 0, 0.029999986, -0.533
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14858024, 0.16765696)
 
 [node name="Floor" type="CSGBox3D" parent="." unique_id=291406200]
-transform = Transform3D(1, 0, 0, 0, 0.99999046, 0, 0, 0, 0.99999046, 0, -0.4162597, 0)
-size = Vector3(1, 0.16748047, 1)
+transform = Transform3D(1, 0, 0, 0, 0.99998134, 0, 0, 0, 0.99998134, 0, -0.4162596, 0.6154106)
+gi_mode = 2
+size = Vector3(1, 0.16748047, 2.230835)
+material = SubResource("StandardMaterial3D_fjnjb")
+
+[node name="Floor2" type="CSGBox3D" parent="." unique_id=824372673]
+transform = Transform3D(1, 0, 0, 0, 0.9999817, 0, 0, 0, 0.9999817, 0, 0.7285005, 0.5914851)
+gi_mode = 2
+size = Vector3(1, 0.16748047, 2.1829834)
+material = SubResource("StandardMaterial3D_fjnjb")
+
+[node name="Floor3" type="CSGBox3D" parent="." unique_id=208267965]
+transform = Transform3D(-4.371139e-08, -0.9999847, 0, 0.9999996, -4.37107e-08, 0, 0, 0, 0.99998426, 0.5552753, 0.23060887, 0.7867623)
+gi_mode = 2
+size = Vector3(1.25, 0.16748047, 1.9326172)
+material = SubResource("StandardMaterial3D_fjnjb")
+
+[node name="Floor5" type="CSGBox3D" parent="." unique_id=1502853942]
+transform = Transform3D(5.4633972e-15, 4.3710717e-08, -0.9999842, 0.9999938, -4.3710358e-08, 0, -4.3711047e-08, -0.99997896, -4.3710358e-08, 0, 0.236, 1.724)
+gi_mode = 2
+size = Vector3(1.36, 0.167, 1.128)
+material = SubResource("StandardMaterial3D_fjnjb")
+
+[node name="Floor4" type="CSGBox3D" parent="." unique_id=1540565592]
+transform = Transform3D(-4.371139e-08, -0.9999847, 0, 0.99999946, -4.3710692e-08, 0, 0, 0, 0.99998415, -0.54240483, 0.23060887, 0.7867622)
+gi_mode = 2
+size = Vector3(1.25, 0.16748047, 1.9326172)
 material = SubResource("StandardMaterial3D_fjnjb")
 
 [node name="Front Panel" type="CSGBox3D" parent="." unique_id=1972463630]
 transform = Transform3D(1, 0, 0, 0, 0.9559841, 0.29333094, 0, -0.29333094, 0.9559841, 0.046561524, -0.2032668, -0.49249876)
+gi_mode = 2
 size = Vector3(0.90966797, 0.39819336, 0.18359375)
 material = SubResource("StandardMaterial3D_fjnjb")
 
 [node name="Front Panel5" type="CSGBox3D" parent="." unique_id=176812037]
 transform = Transform3D(1, 0, 0, 0, 0.95577496, -0.29403478, 0, 0.29403478, 0.95577496, 0, 0.7156278, -0.40819898)
+gi_mode = 2
 size = Vector3(1, 0.39819336, 0.18359375)
 material = SubResource("StandardMaterial3D_fjnjb")
 
 [node name="Right Panel" type="CSGBox3D" parent="." unique_id=1935539472]
 transform = Transform3D(0.8752029, 0.14189889, -0.46245962, 0, 0.9559709, 0.29332432, 0.48375294, -0.25671792, 0.8366677, 0.58998966, -0.2254487, -0.32850558)
+gi_mode = 2
 size = Vector3(0.6479492, 0.39819336, 0.18359375)
 material = SubResource("StandardMaterial3D_fjnjb")
 
 [node name="Front Panel6" type="CSGBox3D" parent="." unique_id=993097510]
 transform = Transform3D(0.87546325, -0.14209878, -0.4618996, 0, 0.9557545, -0.29402864, 0.4832816, 0.25741148, 0.8367297, 0.59, 0.746, -0.329)
+gi_mode = 2
 size = Vector3(0.6479492, 0.39819336, 0.18359375)
 material = SubResource("StandardMaterial3D_fjnjb")
 
 [node name="Front Panel3" type="CSGBox3D" parent="." unique_id=344636657]
 transform = Transform3D(0.87546325, -0.1420988, 0.46189967, 0, 0.95575464, 0.2940287, -0.4832816, -0.25741154, 0.8367298, -0.5922287, -0.2254487, -0.32850558)
+gi_mode = 2
 size = Vector3(0.6479492, 0.39819336, 0.18359375)
 material = SubResource("StandardMaterial3D_fjnjb")
 
 [node name="Front Panel4" type="CSGBox3D" parent="." unique_id=1531444582]
 transform = Transform3D(0.87546325, 0.14209878, 0.46189964, 0, 0.9557543, -0.29402855, -0.4832815, 0.25741136, 0.83672947, -0.592, 0.74618787, -0.3289999)
+gi_mode = 2
 size = Vector3(0.6479492, 0.39819336, 0.18359375)
 material = SubResource("StandardMaterial3D_fjnjb")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=596819597]
+light_color = Color(0.48156738, 0.46484375, 1, 1)
+light_energy = 0.1
+omni_range = 1.2695259
