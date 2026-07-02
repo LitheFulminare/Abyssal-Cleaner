@@ -1,5 +1,8 @@
 class_name Projectile extends Area3D
 
+## ObjectPool listens to this and adds the projectile back to the pool.
+signal expired(projectile: Projectile)
+
 var speed: float = 50
 var direction: Vector3 = Vector3(0, 0, 1)
 var lifespan: float = 1

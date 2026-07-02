@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://ba7gkhwyineqm" path="res://Player/Screens/Left Screen/left_screen.tscn" id="3_fjnjb"]
 [ext_resource type="PackedScene" uid="uid://r375g63wj4kf" path="res://Player/Screens/Orientation/orientation_screen.tscn" id="3_qvldv"]
 [ext_resource type="Material" uid="uid://nx6q0sgto68v" path="res://Player/Screens/Screen_Base_Material.tres" id="4_8ynie"]
-[ext_resource type="Script" uid="uid://bovnuf0yg4li" path="res://Components/object_pool.gd" id="4_ppap2"]
 [ext_resource type="Texture2D" uid="uid://cu7bnq3gxj1fi" path="res://icon.svg" id="5_lp6rj"]
 [ext_resource type="Script" uid="uid://do2ka0kv5k6rh" path="res://Components/input_component.gd" id="7_ywa30"]
 [ext_resource type="Script" uid="uid://ddjouvr5wll05" path="res://Components/weapon_component.gd" id="8_l57p4"]
@@ -28,11 +27,6 @@ script = ExtResource("7_ywa30")
 [node name="WeaponComponent" type="Node" parent="." unique_id=1424983470]
 unique_name_in_owner = true
 script = ExtResource("8_l57p4")
-
-[node name="ObjectPool" type="Node" parent="." unique_id=1308111318]
-unique_name_in_owner = true
-script = ExtResource("4_ppap2")
-metadata/_custom_type_script = "uid://bovnuf0yg4li"
 
 [node name="Screens" type="Node3D" parent="." unique_id=1007835625]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)

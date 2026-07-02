@@ -28,7 +28,6 @@ func _ready() -> void:
 	var weapon: Weapon = weapon_scene.instantiate()
 	add_child(weapon) # should be on player script, not movement script
 	weapon_component.weapon = weapon
-	weapon_component.weapon.projectile_container = %ObjectPool
 	weapon_component.weapon.initialize()
 	
 	#center = DisplayServer.screen_get_size() # gets actual screen resolution

@@ -4,14 +4,9 @@ const CANNON_PROJECTILE = preload("uid://0xuu7gjli1to")
 
 func initialize() -> void:
 	spawn_point = %ProjectileSpawnPoint
+	projectile_pool = %ObjectPool
+	projectile_pool.create_pool(CANNON_PROJECTILE, 20)
 	projectile_scene = CANNON_PROJECTILE
-	create_object_pool(20)
 
 func shoot() -> void:
-	if projectile_index > last_projectile_index:
-		projectile_index = 0
-	
-	projectile_pool[projectile_index].enable()
-	projectile_pool[projectile_index].global_position = spawn_point.global_position
-	
-	projectile_index += 1
+	projectile_pool.acquire().global_position = spawn_point.global_position
