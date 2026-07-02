@@ -1,5 +1,8 @@
 extends CharacterBody3D
 
+@onready var input_component: InputComponent = %InputComponent
+@onready var weapon_component: WeaponComponent = %WeaponComponent
+
 @export var orientationScreen: OrientationScreen
 @export var left_screen: LeftScreen
 
@@ -18,7 +21,16 @@ var screen_size: Vector2
 var forward_speed: float
 var strafe_speed: float
 
+var weapon_scene: PackedScene = preload("res://Submarine Parts/Weapons/Cannon/cannon.tscn")
+
 func _ready() -> void:
+	input_component.lmb_pressed.connect(weapon_component.shoot)
+	var weapon: Weapon = weapon_scene.instantiate()
+	add_child(weapon) # should be on player script, not movement script
+	weapon_component.weapon = weapon
+	weapon_component.weapon.projectile_container = %ObjectPool
+	weapon_component.weapon.initialize()
+	
 	#center = DisplayServer.screen_get_size() # gets actual screen resolution
 	calculate_center()
 	# Recalculates the center when the window size changes
@@ -29,6 +41,8 @@ func _input(event: InputEvent) -> void:
 		_get_mouse_relative_position()
 
 func _physics_process(delta:float) -> void:
+	input_component.update()
+	
 	var forward: Vector3 = -global_basis.z
 	
 	#region Rotation

@@ -32,7 +32,7 @@ glow_blend_mode = 0
 [node name="Node3D" type="Node3D" unique_id=69203848]
 
 [node name="Submarine" parent="." unique_id=478321623 instance=ExtResource("1_5c0no")]
-transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, 6.2909765, 0)
+transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, 10, 0)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=958655420]
 transform = Transform3D(1, 0, 0, 0, 0.2675199, 0, 0, 0, 1, -0.36842346, -0.00043445826, -9.127777)
@@ -60,9 +60,9 @@ material_override = SubResource("StandardMaterial3D_0hynj")
 size = Vector3(1.2824173, 184.91476, 27.594177)
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="." unique_id=1451384032]
-transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 0.26751986, 0, 0.99999994, 0, -4.3711385e-08, -5.976103, 24.599995, 4.9246864)
+transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 0.26751986, 0, 0.99999994, 0, -4.3711385e-08, -5.976103, 2.5992246, 4.9246864)
 material_override = SubResource("StandardMaterial3D_634l0")
-size = Vector3(1.2824173, 184.91476, 27.594177)
+size = Vector3(1.2824173, 20.435234, 27.594177)
 
 [node name="(Editor) DirectionalLight" type="DirectionalLight3D" parent="." unique_id=1984013795]
 transform = Transform3D(1, 0, 0, 0, -0.96057564, 0.27801886, 0, -0.27801886, -0.96057564, 0, 0.77537215, 0)
