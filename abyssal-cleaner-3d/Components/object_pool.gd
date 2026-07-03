@@ -27,5 +27,4 @@ func acquire() -> Projectile:
 	return projectile
 	
 func release(projectile: Projectile) -> void:
-	projectile.disable()
 	_pool.append(projectile)

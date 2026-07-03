@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://cmmxi8houq0ky"]
 
-[ext_resource type="Script" uid="uid://dyx14p5q8fc1a" path="res://Player/submarine_movement.gd" id="1_3uq8f"]
+[ext_resource type="Script" uid="uid://dyx14p5q8fc1a" path="res://Player/player.gd" id="1_3uq8f"]
 [ext_resource type="PackedScene" uid="uid://csh3st7qcjppx" path="res://Player/Submarine_HUD.tscn" id="2_k4f85"]
 [ext_resource type="PackedScene" uid="uid://ba7gkhwyineqm" path="res://Player/Screens/Left Screen/left_screen.tscn" id="3_fjnjb"]
 [ext_resource type="PackedScene" uid="uid://r375g63wj4kf" path="res://Player/Screens/Orientation/orientation_screen.tscn" id="3_qvldv"]
 [ext_resource type="Material" uid="uid://nx6q0sgto68v" path="res://Player/Screens/Screen_Base_Material.tres" id="4_8ynie"]
+[ext_resource type="Script" uid="uid://5k10x7ohkma" path="res://Components/movement_component.gd" id="4_ppap2"]
 [ext_resource type="Texture2D" uid="uid://cu7bnq3gxj1fi" path="res://icon.svg" id="5_lp6rj"]
 [ext_resource type="Script" uid="uid://do2ka0kv5k6rh" path="res://Components/input_component.gd" id="7_ywa30"]
 [ext_resource type="Script" uid="uid://ddjouvr5wll05" path="res://Components/weapon_component.gd" id="8_l57p4"]
@@ -14,11 +15,9 @@ rim = 0.1
 rim_texture = ExtResource("5_lp6rj")
 stencil_flags = 2
 
-[node name="Submarine" type="CharacterBody3D" unique_id=478321623 node_paths=PackedStringArray("orientationScreen", "left_screen")]
+[node name="Submarine" type="CharacterBody3D" unique_id=478321623]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 script = ExtResource("1_3uq8f")
-orientationScreen = NodePath("Screens/Orientation Screen")
-left_screen = NodePath("Screens/Left Screen")
 
 [node name="InputComponent" type="Node" parent="." unique_id=1541435955]
 unique_name_in_owner = true
@@ -28,13 +27,20 @@ script = ExtResource("7_ywa30")
 unique_name_in_owner = true
 script = ExtResource("8_l57p4")
 
+[node name="MovementComponent" type="Node" parent="." unique_id=1852439294]
+unique_name_in_owner = true
+script = ExtResource("4_ppap2")
+metadata/_custom_type_script = "uid://5k10x7ohkma"
+
 [node name="Screens" type="Node3D" parent="." unique_id=1007835625]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 
 [node name="Orientation Screen" parent="Screens" unique_id=578651837 instance=ExtResource("3_qvldv")]
+unique_name_in_owner = true
 transform = Transform3D(0.008752043, 0.0014190245, -0.004624723, 0, 0.009560088, 0.0029333653, 0.004837531, -0.0025672938, 0.008367032, 0.4334602, -0.100387506, -0.34436214)
 
 [node name="Left Screen" parent="Screens" unique_id=1774698677 instance=ExtResource("3_fjnjb")]
+unique_name_in_owner = true
 transform = Transform3D(0.03, 0, 0, 0, 0.029999988, 0, 0, 0, 0.029999988, -0.5330544, 0.83266866, -2.914217)
 material_override = ExtResource("4_8ynie")
 material_overlay = null

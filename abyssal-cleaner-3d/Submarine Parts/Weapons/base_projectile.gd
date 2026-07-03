@@ -21,5 +21,6 @@ func enable() -> void:
 	disabled = false
 
 func disable() -> void:
+	expired.emit(self)
 	visible = false
 	disabled = true

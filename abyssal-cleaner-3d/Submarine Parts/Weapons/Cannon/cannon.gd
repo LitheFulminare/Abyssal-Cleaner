@@ -9,4 +9,7 @@ func initialize() -> void:
 	projectile_scene = CANNON_PROJECTILE
 
 func shoot() -> void:
-	projectile_pool.acquire().global_position = spawn_point.global_position
+	var projectile: Projectile = projectile_pool.acquire()
+	projectile.global_position = spawn_point.global_position
+	projectile.direction = -spawn_point.global_transform.basis.z.normalized()
+	projectile.global_transform.basis = spawn_point.global_transform.basis

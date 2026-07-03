@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 	lifetime += delta
 	if lifetime > lifespan:
 		lifetime = 0.0
-		expired.emit(self)
+		disable()
 	
 	position += direction * speed * delta
 
