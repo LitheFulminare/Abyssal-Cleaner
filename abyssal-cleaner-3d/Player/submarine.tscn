@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cu7bnq3gxj1fi" path="res://icon.svg" id="5_lp6rj"]
 [ext_resource type="Script" uid="uid://do2ka0kv5k6rh" path="res://Components/input_component.gd" id="7_ywa30"]
 [ext_resource type="Script" uid="uid://ddjouvr5wll05" path="res://Components/weapon_component.gd" id="8_l57p4"]
+[ext_resource type="PackedScene" uid="uid://c61evlqjb27re" path="res://Submarine Parts/Weapons/Cannon/cannon.tscn" id="10_n0lkw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fjnjb"]
 rim = 0.1
@@ -125,3 +126,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14858024, 0.16765696)
 light_color = Color(0.48156738, 0.46484375, 1, 1)
 light_energy = 0.1
 omni_range = 1.2695259
+
+[node name="Weapons" type="Node3D" parent="." unique_id=563965173]
+
+[node name="Cannon" parent="Weapons" unique_id=932876568 instance=ExtResource("10_n0lkw")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, -1.2278696, 0.28041607, -0.6399891)

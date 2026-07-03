@@ -11,7 +11,8 @@ class_name Player extends CharacterBody3D
 var center: Vector2
 var screen_size: Vector2
 
-var weapon_scene: PackedScene = preload("res://Submarine Parts/Weapons/Cannon/cannon.tscn")
+#var weapon_scene: PackedScene = preload("res://Submarine Parts/Weapons/Cannon/cannon.tscn")
+@onready var left_weapon: Weapon = %Cannon
 
 func _ready() -> void:
 	input_component.lmb_pressed.connect(weapon_component.shoot)
@@ -32,9 +33,9 @@ func _physics_process(delta:float) -> void:
 	left_screen.update_display(velocity.length())
 
 func initialize_weapon() -> void:
-	var weapon: Weapon = weapon_scene.instantiate()
-	add_child(weapon)
-	weapon_component.weapon = weapon
+	#var weapon: Weapon = weapon_scene.instantiate()
+	#add_child(weapon)
+	weapon_component.weapon = left_weapon
 	weapon_component.weapon.initialize()
 	
 

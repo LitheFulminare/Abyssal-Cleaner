@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="WeaponStats" format=3 uid="uid://d0g4qw05c80v4"]
+
+[ext_resource type="Script" uid="uid://d2nf6hj83r51t" path="res://Submarine Parts/Weapons/weapon_stats.gd" id="1_a1c6g"]
+
+[resource]
+resource_name = "Cannon Stats"
+script = ExtResource("1_a1c6g")
+metadata/_custom_type_script = "uid://d2nf6hj83r51t"

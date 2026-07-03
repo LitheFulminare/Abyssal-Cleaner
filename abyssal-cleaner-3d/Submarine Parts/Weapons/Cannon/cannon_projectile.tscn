@@ -19,8 +19,8 @@ _surfaces = [{
 "vertex_data": PackedByteArray("AAAivQCwyb0AtoU/AAAivQCwyb0AtoW/AAAivQCwyT0AtoW/AAAiPQCwyb0AtoW/AAAivQCwyb0AtoW/AAAivQCwyb0AtoU/AAAivQCwyT0AtoW/AAAivQCwyb0AtoW/AAAiPQCwyb0AtoW/AAAivQCwyT0AtoW/AAAivQCwyT0AtoU/AAAivQCwyb0AtoU/AAAivQCwyb0AtoU/AAAivQCwyT0AtoU/AAAiPQCwyT0AtoU/AAAiPQCwyT0AtoU/AAAivQCwyT0AtoU/AAAivQCwyT0AtoW/AAAivQCwyb0AtoU/AAAiPQCwyb0AtoU/AAAiPQCwyb0AtoW/AAAiPQCwyT0AtoU/AAAiPQCwyb0AtoU/AAAivQCwyb0AtoU/AAAiPQCwyb0AtoW/AAAiPQCwyb0AtoU/AAAiPQCwyT0AtoU/AAAiPQCwyb0AtoW/AAAiPQCwyT0AtoW/AAAivQCwyT0AtoW/AAAivQCwyT0AtoW/AAAiPQCwyT0AtoW/AAAiPQCwyT0AtoU/AAAiPQCwyT0AtoU/AAAiPQCwyT0AtoW/AAAiPQCwyb0AtoW/AAD/f/9//n8AAP9//3/+fwAA/3//f/5//38AAP//AAD/fwAA//8AAP9/AAD//wAA/////wAA/z//////AAD/P/////8AAP8/AAD/f/9//n8AAP9//3/+fwAA/3//f/5//3//fwAA/z//f/9/AAD/P/9//38AAP8//3//////AAD/f/////8AAP9//////wAA/38AAP//AAD/fwAA//8AAP9/AAD//wAA/3//fwAA/z//f/9/AAD/P/9//38AAP8/////f/9//n////9//3/+f////3//f/5//////wAA/z//////AAD/P/////8AAP8//3//////AAD/f/////8AAP9//////wAA////f/9//n////9//3/+f////3//f/5/")
 }]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_3rr4y"]
-size = Vector3(0.08428955, 0.19628906, 2.0661316)
+[sub_resource type="BoxShape3D" id="BoxShape3D_scj13"]
+size = Vector3(0.080322266, 0.06982422, 0.3996582)
 
 [node name="CannonProjectile" type="Area3D" unique_id=874747829]
 collision_layer = 4
@@ -28,10 +28,11 @@ collision_mask = 8
 script = ExtResource("1_3rr4y")
 
 [node name="Model" type="MeshInstance3D" parent="." unique_id=629894740]
+transform = Transform3D(1, 0, 0, 0, 0.3591202, 0, 0, 0, 0.19257975, 0, -0.0013008094, 0.0013713022)
 mesh = SubResource("ArrayMesh_3rr4y")
 
-[node name="CollisionShape" type="CollisionShape3D" parent="." unique_id=1389340996]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.008490801, -0.004059449, 0.0033967495)
-shape = SubResource("BoxShape3D_3rr4y")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1316270525]
+transform = Transform3D(1.0134385, 0, 0, 0, 1.0134385, 0, 0, 0, 1.0134385, -0.00047406554, -0.0017319471, 0.002845347)
+shape = SubResource("BoxShape3D_scj13")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

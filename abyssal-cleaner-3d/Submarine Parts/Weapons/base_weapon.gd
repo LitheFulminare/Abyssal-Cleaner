@@ -1,15 +1,9 @@
 ## Base class of a weapon, can be used by players and enemies. Override its shoot() method.
 @abstract class_name Weapon extends Node
 
-var projectile_pool: ObjectPool
+var stats: WeaponStats
 
-var damage: float = 10
-var hit_cooldown: float = 0.1
-var max_heat: float = 100
-## It's not defined by default how many times per seconds heat is applied.
-var heat_per_sec: float = 15 
-var ammo: int = 0
-var projectile_lifespan: float = 1
+var projectile_pool: ObjectPool
 
 var spawn_point: Marker3D
 

@@ -2,10 +2,13 @@ class_name Cannon extends Weapon
 
 const CANNON_PROJECTILE = preload("uid://0xuu7gjli1to")
 
+@export var weapon_stats: WeaponStats
+
 func initialize() -> void:
 	spawn_point = %ProjectileSpawnPoint
 	projectile_pool = %ObjectPool
 	projectile_pool.create_pool(CANNON_PROJECTILE, 20)
+	stats = weapon_stats
 	projectile_scene = CANNON_PROJECTILE
 
 func shoot() -> void:
