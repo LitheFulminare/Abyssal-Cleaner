@@ -7,7 +7,6 @@
 [ext_resource type="FontFile" uid="uid://npl5gipc8g37" path="res://Assets/Fonts/ds_digital/DS-DIGI.TTF" id="5_64byu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8d6tc"]
-transparency = 1
 albedo_color = Color(1.5720325, 1.5720325, 1.5720325, 1)
 albedo_texture = ExtResource("2_1rg3u")
 emission_enabled = true

@@ -4,6 +4,8 @@ class_name WeaponStats extends Resource
 enum FIRING_TYPE {AUTOMATIC, BURST, LASER}
 enum AMMO_TYPE {OVERHEAT, AMMO}
 
+@export_group("Weapon Info")
+@export var name: String = "Canon"
 @export var damage: float = 10
 @export_custom(PROPERTY_HINT_NONE, "suffix:sec") var projectile_lifespan: float = 1
 
@@ -28,7 +30,10 @@ enum AMMO_TYPE {OVERHEAT, AMMO}
 
 # Overheat
 @export var max_heat: float = 100
-@export_custom(PROPERTY_HINT_NONE, "suffix:heat/shot") var heat_buildup: float = 15
+@export_custom(PROPERTY_HINT_NONE, "suffix:heat/shot") var heat_buildup: float = 10
+@export_custom(PROPERTY_HINT_NONE, "suffix:sec") var cool_delay: float = 1
+## Heat lost per second.
+@export_custom(PROPERTY_HINT_NONE, "suffix:heat/sec") var heat_loss: float = 20
 @export_custom(PROPERTY_HINT_NONE, "suffix:sec") var overheat_cooldown: float = 5
 
 # Ammo
@@ -45,7 +50,7 @@ func _validate_property(property: Dictionary) -> void:
 				property.usage = PROPERTY_USAGE_NO_EDITOR
 				
 		# Ammo Type
-		"heat_buildup", "overheat_cooldown":
+		"heat_buildup", "overheat_cooldown", "heat_loss", "overheat_cooldown":
 			if ammo_type != AMMO_TYPE.OVERHEAT:
 				property.usage = PROPERTY_USAGE_NO_EDITOR
 		"ammo":

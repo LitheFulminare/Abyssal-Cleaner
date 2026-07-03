@@ -15,3 +15,7 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 script = ExtResource("2_8gi44")
 metadata/_custom_type_script = "uid://bovnuf0yg4li"
+
+[node name="CooldownTimer" type="Timer" parent="." unique_id=1659092842]
+unique_name_in_owner = true
+one_shot = true

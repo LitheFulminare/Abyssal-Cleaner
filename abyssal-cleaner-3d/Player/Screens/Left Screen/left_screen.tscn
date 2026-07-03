@@ -1,14 +1,21 @@
 [gd_scene format=3 uid="uid://ba7gkhwyineqm"]
 
-[ext_resource type="Material" uid="uid://nx6q0sgto68v" path="res://Player/Screens/Screen_Base_Material.tres" id="1_haeuj"]
 [ext_resource type="Texture2D" uid="uid://bnj3rj2u5f2ug" path="res://Player/Screens/Left Screen/Left Screen.png" id="2_e3w78"]
 [ext_resource type="Script" uid="uid://bhv0nobtxpj7s" path="res://Player/Screens/Left Screen/left_screen.gd" id="3_1rth6"]
 [ext_resource type="Texture2D" uid="uid://6kq0jeav3rpn" path="res://Player/Screens/Left Screen/Needle.png" id="3_mf0ca"]
 [ext_resource type="FontFile" uid="uid://npl5gipc8g37" path="res://Assets/Fonts/ds_digital/DS-DIGI.TTF" id="5_g77em"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1rth6"]
+albedo_color = Color(1.5720325, 1.5720325, 1.5720325, 1)
+albedo_texture = ExtResource("2_e3w78")
+emission_enabled = true
+emission = Color(1.5720325, 1.5720325, 1.5720325, 1)
+emission_operator = 1
+emission_texture = ExtResource("2_e3w78")
+
 [node name="Left Screen" type="Sprite3D" unique_id=1774698677 node_paths=PackedStringArray("speed_needle", "speed_label")]
 transform = Transform3D(0.03, 0, 0, 0, 0.02999999, 0, 0, 0, 0.02999999, 0, 0, 0)
-material_overlay = ExtResource("1_haeuj")
+material_override = SubResource("StandardMaterial3D_1rth6")
 texture = ExtResource("2_e3w78")
 script = ExtResource("3_1rth6")
 speed_needle = NodePath("Speed needle")
@@ -24,5 +31,6 @@ texture = ExtResource("3_mf0ca")
 [node name="Speed display" type="Label3D" parent="." unique_id=1399773911]
 transform = Transform3D(3.5900002, 0, 0, 0, 3.5899997, 0, 0, 0, 3.5899997, -8.052351, 1.0476328, 0.01)
 render_priority = 1
+outline_modulate = Color(0, 0, 0, 0)
 text = "99"
 font = ExtResource("5_g77em")
