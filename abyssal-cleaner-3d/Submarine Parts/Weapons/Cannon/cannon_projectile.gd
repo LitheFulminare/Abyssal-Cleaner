@@ -3,7 +3,7 @@ class_name Cannon_Projectile extends Projectile
 var lifetime: float
 
 func _ready() -> void:
-	visible = false
+	disable()
 
 func _process(delta: float) -> void:
 	if disabled:
@@ -17,8 +17,5 @@ func _process(delta: float) -> void:
 	position += direction * speed * delta
 
 func _on_body_entered(body: Node3D) -> void:
-	if disabled: 
-		return
-	
 	# if body is Enemy ...
 	return

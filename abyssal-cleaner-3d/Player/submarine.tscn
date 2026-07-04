@@ -10,6 +10,9 @@
 [ext_resource type="Script" uid="uid://ddjouvr5wll05" path="res://Components/weapon_component.gd" id="8_l57p4"]
 [ext_resource type="PackedScene" uid="uid://c61evlqjb27re" path="res://Submarine Parts/Weapons/Cannon/cannon.tscn" id="10_n0lkw"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_480pk"]
+size = Vector3(1.2618713, 1.367424, 2.3173218)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fjnjb"]
 rim = 0.1
 rim_texture = ExtResource("5_lp6rj")
@@ -17,6 +20,8 @@ stencil_flags = 2
 
 [node name="Submarine" type="CharacterBody3D" unique_id=478321623]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+collision_layer = 2
+collision_mask = 9
 script = ExtResource("1_3uq8f")
 
 [node name="InputComponent" type="Node" parent="." unique_id=1541435955]
@@ -31,6 +36,10 @@ script = ExtResource("8_l57p4")
 unique_name_in_owner = true
 script = ExtResource("4_ppap2")
 metadata/_custom_type_script = "uid://5k10x7ohkma"
+
+[node name="Collider" type="CollisionShape3D" parent="." unique_id=697275043]
+transform = Transform3D(1, 0, 0, 0, 0.9999741, 0, 0, 0, 0.9999741, 0.006088257, 0.1837109, 0.65866023)
+shape = SubResource("BoxShape3D_480pk")
 
 [node name="Screens" type="Node3D" parent="." unique_id=1007835625]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)

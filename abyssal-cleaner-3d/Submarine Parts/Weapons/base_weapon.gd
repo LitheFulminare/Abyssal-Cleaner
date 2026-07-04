@@ -1,4 +1,4 @@
-## Base class of a weapon, can be used by players and enemies. Override its shoot() method.
+## Base class of a weapon, can be used by players and enemies.
 @abstract class_name Weapon extends Node
 
 var stats: WeaponStats
@@ -32,7 +32,6 @@ func _process(delta: float) -> void:
 			cooldown = 0.0
 
 @abstract
-## Set stats, projectile_pool, spawn_point and projectile_scene.
 func initialize() -> void
 
 func shoot() -> void:
