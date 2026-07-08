@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bifrmgiqdvx6j"]
+
+[ext_resource type="Script" uid="uid://fvbgtahxvru4" path="res://Enemies/enemy.gd" id="1_4isyn"]
+[ext_resource type="Script" uid="uid://73u40pgi4qf7" path="res://Components/State Machine/state_machine.gd" id="2_jcwuj"]
+[ext_resource type="Script" uid="uid://b1bg34igd7ad3" path="res://Enemies/States/idle_state.gd" id="3_biruh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wdetw"]
+albedo_color = Color(0.16513479, 0, 0.21875, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_scj13"]
+albedo_color = Color(1, 0, 0, 1)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 2.5
+
+[node name="Enemy" type="CharacterBody3D" unique_id=1094565071]
+script = ExtResource("1_4isyn")
+
+[node name="StateMachine" type="Node" parent="." unique_id=142620340 node_paths=PackedStringArray("initial_state")]
+unique_name_in_owner = true
+script = ExtResource("2_jcwuj")
+initial_state = NodePath("Idle")
+metadata/_custom_type_script = "uid://73u40pgi4qf7"
+
+[node name="Idle" type="Node" parent="StateMachine" unique_id=433472685 node_paths=PackedStringArray("enemy")]
+unique_name_in_owner = true
+script = ExtResource("3_biruh")
+enemy = NodePath("../..")
+metadata/_custom_type_script = "uid://b1bg34igd7ad3"
+
+[node name="Body" type="CSGBox3D" parent="." unique_id=363681059]
+material = SubResource("StandardMaterial3D_wdetw")
+
+[node name="Eye" type="CSGBox3D" parent="Body" unique_id=1109933784]
+transform = Transform3D(0.300665, 0, 0, 0, 0.13962889, 0, 0, 0, 0.09947261, 0.20864925, 0.27402878, 0.4758904)
+size = Vector3(0.55773926, 1, 1)
+material = SubResource("StandardMaterial3D_scj13")
+
+[node name="Eye2" type="CSGBox3D" parent="Body" unique_id=906693086]
+transform = Transform3D(0.300665, 0, 0, 0, 0.13962889, 0, 0, 0, 0.09947261, -0.19616902, 0.27402878, 0.4758904)
+size = Vector3(0.55773926, 1, 1)
+material = SubResource("StandardMaterial3D_scj13")

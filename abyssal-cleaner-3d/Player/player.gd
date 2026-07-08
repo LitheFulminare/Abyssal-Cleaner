@@ -3,8 +3,6 @@ class_name Player extends CharacterBody3D
 @onready var input_component: InputComponent = %InputComponent
 @onready var weapon_component: WeaponComponent = %WeaponComponent
 @onready var movement_component: MovementComponent = %MovementComponent
-
-
 @onready var orientation_screen: OrientationScreen = %"Orientation Screen"
 @onready var left_screen: LeftScreen = %"Left Screen"
 
@@ -24,7 +22,7 @@ func _ready() -> void:
 
 func _physics_process(delta:float) -> void:
 	input_component.update(center, screen_size)
-	movement_component.update(input_component.mouse_position, center, delta)
+	movement_component.update(input_component.move_dir, input_component.mouse_position, center, delta)
 	
 	# HUD
 	var forward: Vector3 = global_basis.z

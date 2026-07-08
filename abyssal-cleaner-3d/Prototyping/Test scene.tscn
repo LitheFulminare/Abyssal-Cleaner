@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cmmxi8houq0ky" path="res://Player/submarine.tscn" id="1_5c0no"]
 [ext_resource type="Texture2D" uid="uid://cu7bnq3gxj1fi" path="res://icon.svg" id="2_3xrxr"]
+[ext_resource type="PackedScene" uid="uid://bifrmgiqdvx6j" path="res://Enemies/Enemy.tscn" id="3_3xrxr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ij3co"]
 albedo_texture = ExtResource("2_3xrxr")
@@ -29,7 +30,7 @@ glow_strength = 0.5
 glow_bloom = 0.8
 glow_blend_mode = 0
 
-[node name="Node3D" type="Node3D" unique_id=69203848]
+[node name="Level" type="Node3D" unique_id=69203848]
 
 [node name="Submarine" parent="." unique_id=478321623 instance=ExtResource("1_5c0no")]
 transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, 10, 0)
@@ -76,3 +77,6 @@ omni_range = 23.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1386287149]
 environment = SubResource("Environment_20hsm")
+
+[node name="Enemy" parent="." unique_id=1094565071 instance=ExtResource("3_3xrxr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.009352565, 9.58249, -10.19606)

@@ -16,7 +16,6 @@ func initialize() -> void:
 	projectile_pool.create_pool(CANNON_PROJECTILE, 20)
 	projectile_scene = CANNON_PROJECTILE
 	shoot_delay = 1 / stats.fire_rate
-	heat_loss_per_tick = stats.heat_loss / Engine.physics_ticks_per_second
 
 func set_firing_mode() -> void:
 	match stats.firing_type:

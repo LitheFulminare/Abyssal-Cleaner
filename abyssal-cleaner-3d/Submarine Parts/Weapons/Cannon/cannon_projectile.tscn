@@ -1,23 +1,11 @@
-[gd_scene format=4 uid="uid://0xuu7gjli1to"]
+[gd_scene format=3 uid="uid://0xuu7gjli1to"]
 
 [ext_resource type="Script" uid="uid://bxi735goh31jb" path="res://Submarine Parts/Weapons/Cannon/cannon_projectile.gd" id="1_3rr4y"]
+[ext_resource type="Material" uid="uid://c8kp1urvdaarc" path="res://Materials/laser.tres" id="2_ncnsa"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3rr4y"]
-emission_enabled = true
-emission = Color(15.30028, 0, 0, 1)
-emission_energy_multiplier = 10.0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_3rr4y"]
-_surfaces = [{
-"aabb": AABB(-0.03955078, -0.098480225, -1.0446167, 0.07910156, 0.19696045, 2.0892334),
-"attribute_data": PackedByteArray("AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/"),
-"format": 34359738391,
-"material": SubResource("StandardMaterial3D_3rr4y"),
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 36,
-"vertex_data": PackedByteArray("AAAivQCwyb0AtoU/AAAivQCwyb0AtoW/AAAivQCwyT0AtoW/AAAiPQCwyb0AtoW/AAAivQCwyb0AtoW/AAAivQCwyb0AtoU/AAAivQCwyT0AtoW/AAAivQCwyb0AtoW/AAAiPQCwyb0AtoW/AAAivQCwyT0AtoW/AAAivQCwyT0AtoU/AAAivQCwyb0AtoU/AAAivQCwyb0AtoU/AAAivQCwyT0AtoU/AAAiPQCwyT0AtoU/AAAiPQCwyT0AtoU/AAAivQCwyT0AtoU/AAAivQCwyT0AtoW/AAAivQCwyb0AtoU/AAAiPQCwyb0AtoU/AAAiPQCwyb0AtoW/AAAiPQCwyT0AtoU/AAAiPQCwyb0AtoU/AAAivQCwyb0AtoU/AAAiPQCwyb0AtoW/AAAiPQCwyb0AtoU/AAAiPQCwyT0AtoU/AAAiPQCwyb0AtoW/AAAiPQCwyT0AtoW/AAAivQCwyT0AtoW/AAAivQCwyT0AtoW/AAAiPQCwyT0AtoW/AAAiPQCwyT0AtoU/AAAiPQCwyT0AtoU/AAAiPQCwyT0AtoW/AAAiPQCwyb0AtoW/AAD/f/9//n8AAP9//3/+fwAA/3//f/5//38AAP//AAD/fwAA//8AAP9/AAD//wAA/////wAA/z//////AAD/P/////8AAP8/AAD/f/9//n8AAP9//3/+fwAA/3//f/5//3//fwAA/z//f/9/AAD/P/9//38AAP8//3//////AAD/f/////8AAP9//////wAA/38AAP//AAD/fwAA//8AAP9/AAD//wAA/3//fwAA/z//f/9/AAD/P/9//38AAP8/////f/9//n////9//3/+f////3//f/5//////wAA/z//////AAD/P/////8AAP8//3//////AAD/f/////8AAP9//////wAA////f/9//n////9//3/+f////3//f/5/")
-}]
+[sub_resource type="BoxMesh" id="BoxMesh_ij7cf"]
+material = ExtResource("2_ncnsa")
+size = Vector3(0.07543945, 0.18548584, 2.1047363)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_scj13"]
 size = Vector3(0.080322266, 0.06982422, 0.3996582)
@@ -28,8 +16,8 @@ collision_mask = 9
 script = ExtResource("1_3rr4y")
 
 [node name="Model" type="MeshInstance3D" parent="." unique_id=629894740]
-transform = Transform3D(1, 0, 0, 0, 0.3591202, 0, 0, 0, 0.19257975, 0, -0.0013008094, 0.0013713022)
-mesh = SubResource("ArrayMesh_3rr4y")
+transform = Transform3D(1, 0, 0, 0, 0.3591202, 0, 0, 0, 0.19257975, -0.0010986328, -0.0020350963, 0.003087405)
+mesh = SubResource("BoxMesh_ij7cf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1316270525]
 unique_name_in_owner = true

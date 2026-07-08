@@ -5,5 +5,7 @@
 [resource]
 resource_name = "Cannon Stats"
 script = ExtResource("1_a1c6g")
+fire_rate = 3.0
+heat_buildup = 15.0
 overheat_cooldown = 3.0
 metadata/_custom_type_script = "uid://d2nf6hj83r51t"

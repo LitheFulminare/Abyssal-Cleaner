@@ -12,7 +12,6 @@ var can_fire: bool = true
 var shoot_delay: float
 var current_heat: float = 0.0
 var is_cooling_down: bool = false
-var heat_loss_per_tick: float
 var weapon_overheated: bool = false
 
 var current_weapon_firing_mode: Callable
@@ -20,11 +19,10 @@ var current_weapon_firing_mode: Callable
 func _ready() -> void:
 	pass
 
-func _physics_process(_delta: float) -> void:
-	if is_cooling_down:
-		cooldown_weapon()
-
 func _process(delta: float) -> void:
+	if is_cooling_down:
+		cooldown_weapon(delta)
+	
 	if can_fire == false:
 		cooldown += delta
 		if cooldown > shoot_delay:
@@ -76,9 +74,9 @@ func overheat() -> void:
 	print("WEAPON OVERHEATED")
 	cooldown_timer.start(stats.overheat_cooldown)
 
-func cooldown_weapon() -> void:
+func cooldown_weapon(delta: float) -> void:
 	print("Cooling down")
-	current_heat -= heat_loss_per_tick
+	current_heat -= stats.heat_loss * delta
 	if current_heat <= 0.0:
 		current_heat = 0.0
 		is_cooling_down = false
