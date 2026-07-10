@@ -32,6 +32,9 @@ glow_blend_mode = 0
 
 [node name="Level" type="Node3D" unique_id=69203848]
 
+[node name="Enemy" parent="." unique_id=1094565071 instance=ExtResource("3_3xrxr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.009352565, 9.58249, -10.19606)
+
 [node name="Submarine" parent="." unique_id=478321623 instance=ExtResource("1_5c0no")]
 transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, 10, 0)
 
@@ -77,6 +80,3 @@ omni_range = 23.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1386287149]
 environment = SubResource("Environment_20hsm")
-
-[node name="Enemy" parent="." unique_id=1094565071 instance=ExtResource("3_3xrxr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.009352565, 9.58249, -10.19606)

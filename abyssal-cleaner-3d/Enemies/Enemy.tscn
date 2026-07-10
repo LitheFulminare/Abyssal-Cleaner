@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bifrmgiqdvx6j"]
 
 [ext_resource type="Script" uid="uid://fvbgtahxvru4" path="res://Enemies/enemy.gd" id="1_4isyn"]
+[ext_resource type="Script" uid="uid://dfuvnebxpgviy" path="res://Components/steering_behaviour_component.gd" id="2_biruh"]
 [ext_resource type="Script" uid="uid://73u40pgi4qf7" path="res://Components/State Machine/state_machine.gd" id="2_jcwuj"]
 [ext_resource type="Script" uid="uid://b1bg34igd7ad3" path="res://Enemies/States/idle_state.gd" id="3_biruh"]
 
@@ -13,13 +14,20 @@ emission_enabled = true
 emission = Color(1, 0, 0, 1)
 emission_energy_multiplier = 2.5
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_n1bor"]
+radius = 3.2899363
+
 [node name="Enemy" type="CharacterBody3D" unique_id=1094565071]
 script = ExtResource("1_4isyn")
 
-[node name="StateMachine" type="Node" parent="." unique_id=142620340 node_paths=PackedStringArray("initial_state")]
+[node name="SteeringBehaviourComponent" type="Node" parent="." unique_id=650379653 node_paths=PackedStringArray("body")]
+unique_name_in_owner = true
+script = ExtResource("2_biruh")
+body = NodePath("..")
+
+[node name="StateMachine" type="Node" parent="." unique_id=142620340]
 unique_name_in_owner = true
 script = ExtResource("2_jcwuj")
-initial_state = NodePath("Idle")
 metadata/_custom_type_script = "uid://73u40pgi4qf7"
 
 [node name="Idle" type="Node" parent="StateMachine" unique_id=433472685 node_paths=PackedStringArray("enemy")]
@@ -40,3 +48,14 @@ material = SubResource("StandardMaterial3D_scj13")
 transform = Transform3D(0.300665, 0, 0, 0, 0.13962889, 0, 0, 0, 0.09947261, -0.19616902, 0.27402878, 0.4758904)
 size = Vector3(0.55773926, 1, 1)
 material = SubResource("StandardMaterial3D_scj13")
+
+[node name="PlayerDetectionArea3D" type="Area3D" parent="." unique_id=1110145172]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.6365747)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerDetectionArea3D" unique_id=1400158243]
+shape = SubResource("SphereShape3D_n1bor")
+
+[connection signal="body_entered" from="PlayerDetectionArea3D" to="." method="_on_player_detection_area_3d_body_entered"]
